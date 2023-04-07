@@ -50,14 +50,11 @@ EM DESENVOLVIMENTO.
 JAVA 8; 
 WINDOWS 8 ou Superior; 
 
-Aparelho utilizado para testes.
-- Liste todas as dependencias e libs que o usuário deve ter instalado na máquina antes de rodar a aplicação, para rodar o projeto.
-
 ## Como rodar a aplicação 
-Explicação de como se deve utilizar o projeto.
+EM DESENVOLVIMENTO
 
 ## Testes realizados
-Utilização de imagens e descrição do qeu foi testado.
+EM DESENVOLVIMENTO
 
 ## Banco de Dados 🗂️
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
@@ -72,10 +69,12 @@ https://github.com/JFormDesigner/FlatLaf
 EM DESENVOLVIMENTO
 
 ## Resolvendo Problemas 
-Em issues foram abertos alguns problemas gerados durante o desenvolvimento desse projeto e como foram resolvidos.
+
+EM DESENVOLVIMENTO
 
 ## Recursos inseridos 🧰
-Se for o caso, liste tarefas/funcionalidades que ainda precisam ser implementadas na sua aplicação, insira fotos da tela do app.
+
+EM DESENVOLVIMENTO
 
 ![image](https://user-images.githubusercontent.com/68714869/230674651-ac56638e-39fa-49be-9f9e-0be217c89fa8.png)
 
