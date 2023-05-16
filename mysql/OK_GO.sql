@@ -25,6 +25,7 @@ CREATE TABLE grupos (
   tag					VARCHAR(20)				NOT NULL, 
   nome  				VARCHAR(100) 			NOT NULL,
   descricao 			VARCHAR(500) 			NOT NULL,
+  contato				VARCHAR(100),			
   criador_id			INT						NOT NULL,
   data_criação 			TIMESTAMP 				DEFAULT 		CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
@@ -42,8 +43,8 @@ CREATE TABLE membros (
 
 insert into usuarios (username, nome, email, senha, celular) values
 ('Joao123','Joao Victor', 'joao@gmail.com', 'joaozinho123', '15999999999'),
-("WnCassillo", "Wilson Neto", 'wilson@gmail.com', "54321", '15888888888'),
-("PHolder", "Pedro Holder", 'pholder@gmail.com', "0123", '11000000000');
+('WnCassillo', 'Wilson Neto', 'wilson@gmail.com', '54321', '15888888888'),
+('PHolder', 'Pedro Holder', 'pholder@gmail.com', '0123', '11000000000');
 
 insert into avaliacoes (usuario_id, nota) values
 (1, 4), (1, 3), (1, 4),

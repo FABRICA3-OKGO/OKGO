@@ -10,6 +10,7 @@ public class grupo {
     String tag;
     String nome;
     String descricao;
+    String contato;
     String dataCriacao;//String por enquanto
     
 }
