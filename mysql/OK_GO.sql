@@ -4,9 +4,9 @@ use OK_GO;
 
 CREATE TABLE usuarios (
   id 					INT 					NOT NULL 			AUTO_INCREMENT,
-  username				VARCHAR(30)				NOT NULL, 
+  username				VARCHAR(30)				NOT NULL				UNIQUE, 
+  email 				VARCHAR(100) 			NOT NULL				UNIQUE,
   nome  				VARCHAR(100) 			NOT NULL,
-  email 				VARCHAR(100) 			NOT NULL,
   senha 				VARCHAR(100) 			NOT NULL,
   celular				VARCHAR(15)				NOT NULL,
   PRIMARY KEY (id)

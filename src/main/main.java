@@ -16,7 +16,7 @@ public class main {
         sql connect = new sql();
         connect.connect();
         connect.insertSQL("insert into usuarios (username, nome, email, senha, celular) values "
-                + "('Bank', 'Banco de Dados', 'bd@gmail.com', 'ABC', '00000000000');");
+                + "('Joao123', 'Banco de Dados', 'bd@gmail.com', 'ABC', '00000000000');");
         connect.disconnect();
         
         
