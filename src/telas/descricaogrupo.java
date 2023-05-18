@@ -108,7 +108,7 @@ public class descricaogrupo extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "INTEGRANTES", "STATUS"
+                "INTEGRANTES", "NOTA DO USER"
             }
         ) {
             boolean[] canEdit = new boolean [] {

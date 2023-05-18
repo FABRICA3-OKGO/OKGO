@@ -8,12 +8,12 @@ package telas;
  *
  * @author Alves
  */
-public class criargrupo extends javax.swing.JFrame {
+public class admingrupo extends javax.swing.JFrame {
 
     /**
-     * Creates new form login
+     * Creates new form admingrupo
      */
-    public criargrupo() {
+    public admingrupo() {
         initComponents();
     }
 
@@ -37,16 +37,14 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
-        jButton3.setText("VOLTAR");
+        jButton3.setText("EXCLUIR GRUPO");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -60,7 +58,7 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(180, 110, 430, 110);
+        jScrollPane2.setBounds(180, 110, 300, 110);
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -68,24 +66,24 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTextArea2);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(180, 370, 430, 60);
+        jScrollPane3.setBounds(180, 370, 300, 60);
 
-        jButton4.setText("EDITAR");
+        jButton4.setText("TIRAR PARTICIPANTE");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(320, 450, 140, 50);
+        jButton4.setBounds(340, 450, 140, 50);
 
-        jLabel1.setText("INSIRA A DESCRIÇÃO DO GRUPO");
+        jLabel1.setText("DESCRIÇÃO DO GRUPO");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(180, 80, 430, 30);
+        jLabel1.setBounds(180, 80, 300, 30);
 
-        jLabel2.setText("MEIO DE CONTATO");
+        jLabel2.setText("CONTATO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(180, 340, 430, 30);
+        jLabel2.setBounds(180, 340, 300, 30);
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
@@ -93,35 +91,46 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTextArea3);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(180, 260, 430, 60);
+        jScrollPane4.setBounds(180, 260, 300, 60);
 
-        jLabel3.setText("COLOQUE 1 HASHTAGS");
+        jLabel3.setText("#HASHTAGS");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(180, 230, 430, 30);
+        jLabel3.setBounds(180, 230, 300, 30);
 
-        jButton5.setText("CRIAR GRUPO");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "INTEGRANTES", "NOTA DO USER"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(470, 450, 140, 50);
+        jScrollPane1.setViewportView(jTable1);
 
-        jLabel4.setText("TITULO DO GRUPO");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(180, 20, 430, 30);
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(490, 110, 180, 390);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jTextArea4.setText("asdasdas\nasdasda");
-        jScrollPane5.setViewportView(jTextArea4);
-
-        getContentPane().add(jScrollPane5);
-        jScrollPane5.setBounds(180, 50, 430, 20);
+        jButton1.setText("TITULO DO GRUPO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(180, 30, 300, 40);
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -132,9 +141,9 @@ public class criargrupo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,40 +162,38 @@ public class criargrupo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(criargrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(admingrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(criargrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(admingrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(criargrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(admingrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(criargrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(admingrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new criargrupo().setVisible(true);
+                new admingrupo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
     // End of variables declaration//GEN-END:variables
 }
