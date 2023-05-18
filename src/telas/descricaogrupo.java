@@ -25,7 +25,6 @@ public class descricaogrupo extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         jFrame1 = new javax.swing.JFrame();
         jFrame2 = new javax.swing.JFrame();
         jButton3 = new javax.swing.JButton();
@@ -55,7 +54,6 @@ public class descricaogrupo extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3);
         jButton3.setBounds(180, 450, 130, 50);
-
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
@@ -114,7 +112,6 @@ public class descricaogrupo extends javax.swing.JFrame {
             boolean[] canEdit = new boolean [] {
                 false, false
             };
-
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }

@@ -96,6 +96,7 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane4.setBounds(180, 260, 430, 60);
 
         jLabel3.setText("COLOQUE 1 HASHTAGS");
+
         getContentPane().add(jLabel3);
         jLabel3.setBounds(180, 230, 430, 30);
 
