@@ -54,7 +54,6 @@ public class descricaogrupo extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3);
         jButton3.setBounds(180, 450, 130, 50);
-
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
@@ -107,13 +106,12 @@ public class descricaogrupo extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "INTEGRANTES", "STATUS"
+                "INTEGRANTES", "NOTA DO USER"
             }
         ) {
             boolean[] canEdit = new boolean [] {
                 false, false
             };
-
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
@@ -136,11 +134,9 @@ public class descricaogrupo extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(180, 30, 300, 40);
 
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -149,7 +145,6 @@ public class descricaogrupo extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
-
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -208,6 +203,5 @@ public class descricaogrupo extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-
     // End of variables declaration//GEN-END:variables
 }
