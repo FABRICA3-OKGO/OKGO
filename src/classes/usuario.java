@@ -1,9 +1,6 @@
+
 package classes;
 
-/**
- *
- * @author cassi
- */
 public class usuario {
     int id;
     String username;
@@ -11,5 +8,6 @@ public class usuario {
     String email;
     String senha;
     String celular;
+
     
 }
