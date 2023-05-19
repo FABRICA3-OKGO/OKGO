@@ -5,6 +5,7 @@
 package telas;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import db.sql;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -71,7 +72,7 @@ public class cadastro extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(460, 30, 200, 50);
 
-        jLabel2.setText("Digite seu TELEFONE:");
+        jLabel2.setText("Digite seu TELEFONE: (opcional)");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(390, 290, 350, 16);
 
@@ -97,6 +98,7 @@ public class cadastro extends javax.swing.JFrame {
         getContentPane().add(txtSenhaConfirmar);
         txtSenhaConfirmar.setBounds(390, 430, 350, 20);
 
+        txtTelefone.setAutoscrolls(false);
         jScrollPane2.setViewportView(txtTelefone);
 
         getContentPane().add(jScrollPane2);
@@ -216,13 +218,42 @@ public class cadastro extends javax.swing.JFrame {
 
         } else if (!txtSenha.getText().equals(txtSenhaConfirmar.getText())) {
             JOptionPane.showMessageDialog(null, "As senhas devem ser iguais!");
+            
+        } else if (!txtTelefone.getText().isEmpty()) { // se telefone NAO estiver vazio
+            System.out.println("Campos de Cadastro preenchidos");
+            cadastrar(txtEmail.getText(), txtUser.getText(), txtNome.getText(), txtTelefone.getText(), txtSenha.getText());
+            JOptionPane.showMessageDialog(null, "Cadastro criado!");
+            telas.login telaLogin = new login();
+                            telaLogin.setVisible(true);
+                            dispose();
 
         } else {
             System.out.println("Campos de Cadastro preenchidos");
-            //Avancar(); // OUTRO METODO CRIADO
-
+            cadastrar(txtEmail.getText(), txtUser.getText(), txtNome.getText(), txtSenha.getText());
+            JOptionPane.showMessageDialog(null, "Cadastro criado!");
+            telas.login telaLogin = new login();
+                            telaLogin.setVisible(true);
+                            dispose();
         }
-    } // METODO CRIADO PARA VERIFICAR SE TODOS OS CAMPOS FORAM PREENCHIDOS CORRETAMENTE
+    } 
+    
+    public void cadastrar(String email, String user, String nome, String senha){
+        sql connect = new sql();
+        connect.connect();
+        connect.insertSQL("insert into usuarios (username, nome, email, senha) values "          
+                +"( '" + user + "','" + nome + "','" + email + "','" + senha + "');");       
+        connect.disconnect();
+    }
+    
+    public void cadastrar(String email, String user, String nome, String telefone, String senha){
+         sql connect = new sql();
+        connect.connect();
+        connect.insertSQL("insert into usuarios (username, nome, email, celular, senha) values "
+                +"( '" + user + "','" + nome + "','" + email + "','" + telefone + "','" + senha + "');"); 
+        connect.disconnect();
+        
+    }
+    
     
     
 

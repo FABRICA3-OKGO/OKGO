@@ -18,11 +18,11 @@ public class main {
         login.setVisible(true);
         
         //temporario, só pra testes iniciais do banco
-        sql connect = new sql();
-        connect.connect();
+        //sql connect = new sql();
+        //connect.connect();
         //connect.insertSQL("insert into usuarios (username, nome, email, senha, celular) values "
         //        + "('testebd', 'Banco de Dados', 'bd@gmail.com', 'ABC', '00000000000');");
-        connect.disconnect();
+        //connect.disconnect();
         
         
     }

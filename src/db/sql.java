@@ -11,7 +11,6 @@ import java.sql.SQLException;
  * @author cassi
  */
 public class sql {
-    //wip
     
     private Connection conn = null; 
     private Statement statement; 
@@ -113,6 +112,24 @@ public class sql {
             return false;
         }
         return true;
+    }
+    
+    public void cadastrar(String email, String user, String nome, String senha){
+        sql connect = new sql();
+        connect.connect();
+        connect.insertSQL("insert into usuarios (username, nome, email, senha) values "
+                +"(" + user + ',' + nome + ',' + email + ',' + senha + ");");       
+        connect.disconnect();
+        
+    }
+    
+     public void cadastrar(String email, String user, String nome, String telefone, String senha){
+         sql connect = new sql();
+        connect.connect();
+        connect.insertSQL("insert into usuarios (username, nome, email, telefone, senha) values "
+                +"(" + user + ',' + nome + ',' + email + ',' + telefone + ',' + senha + ");");       
+        connect.disconnect();
+        
     }
     
     
