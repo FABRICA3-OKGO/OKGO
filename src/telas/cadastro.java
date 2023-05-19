@@ -5,6 +5,7 @@
 package telas;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -35,31 +36,31 @@ public class cadastro extends javax.swing.JFrame {
         jFrame1 = new javax.swing.JFrame();
         jFrame2 = new javax.swing.JFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        txtEmail = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        txtSenha = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        txtSenhaConfirmar = new javax.swing.JPasswordField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        txtTelefone = new javax.swing.JTextPane();
         jButton2 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
+        txtUser = new javax.swing.JTextPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
+        txtNome = new javax.swing.JTextPane();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(txtEmail);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(390, 130, 350, 20);
@@ -82,21 +83,21 @@ public class cadastro extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(390, 350, 350, 16);
 
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
+                txtSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField2);
-        jPasswordField2.setBounds(390, 370, 350, 20);
+        getContentPane().add(txtSenha);
+        txtSenha.setBounds(390, 370, 350, 20);
 
         jLabel7.setText("Confirme sua senha:");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(390, 410, 350, 16);
-        getContentPane().add(jPasswordField3);
-        jPasswordField3.setBounds(390, 430, 350, 20);
+        getContentPane().add(txtSenhaConfirmar);
+        txtSenhaConfirmar.setBounds(390, 430, 350, 20);
 
-        jScrollPane2.setViewportView(jTextPane2);
+        jScrollPane2.setViewportView(txtTelefone);
 
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(390, 310, 350, 20);
@@ -130,12 +131,12 @@ public class cadastro extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(390, 170, 350, 16);
 
-        jScrollPane3.setViewportView(jTextPane3);
+        jScrollPane3.setViewportView(txtUser);
 
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(390, 190, 350, 20);
 
-        jScrollPane4.setViewportView(jTextPane4);
+        jScrollPane4.setViewportView(txtNome);
 
         getContentPane().add(jScrollPane4);
         jScrollPane4.setBounds(390, 250, 350, 20);
@@ -148,12 +149,14 @@ public class cadastro extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
+        System.out.println("BVDS");
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        Validar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -204,6 +207,24 @@ public class cadastro extends javax.swing.JFrame {
             }
         });
     }
+ 
+    //metodos
+    private void Validar() {
+
+        if (txtEmail.getText().isEmpty() || txtUser.getText().isEmpty() || txtNome.getText().isEmpty() || txtSenha.getText().isEmpty() || txtSenhaConfirmar.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos de cadastro corretamente!");
+
+        } else if (!txtSenha.getText().equals(txtSenhaConfirmar.getText())) {
+            JOptionPane.showMessageDialog(null, "As senhas devem ser iguais!");
+
+        } else {
+            System.out.println("Campos de Cadastro preenchidos");
+            //Avancar(); // OUTRO METODO CRIADO
+
+        }
+    } // METODO CRIADO PARA VERIFICAR SE TODOS OS CAMPOS FORAM PREENCHIDOS CORRETAMENTE
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
@@ -221,15 +242,15 @@ public class cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
+    private javax.swing.JTextPane txtEmail;
+    private javax.swing.JTextPane txtNome;
+    private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JPasswordField txtSenhaConfirmar;
+    private javax.swing.JTextPane txtTelefone;
+    private javax.swing.JTextPane txtUser;
     // End of variables declaration//GEN-END:variables
 }

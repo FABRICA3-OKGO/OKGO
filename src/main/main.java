@@ -25,8 +25,6 @@ public class main {
         connect.disconnect();
         
         
-        
-        
     }
     
 }
