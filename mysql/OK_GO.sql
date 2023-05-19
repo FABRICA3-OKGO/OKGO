@@ -12,10 +12,10 @@ CREATE TABLE usuarios (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE avaliacoes ( ##Notas de 0-5, Pegar a média e dar a nota do usuario.
+CREATE TABLE avaliacoes ( 
   id 					INT 					NOT NULL 			AUTO_INCREMENT,
   usuario_id 			INT 					NOT NULL,
-  nota					INT						NOT NULL,  ## Fazer filtragem e aceitar só 0-5
+  nota					INT						NOT NULL,  
   PRIMARY KEY (id),
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );

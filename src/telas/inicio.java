@@ -121,6 +121,11 @@ public class inicio extends javax.swing.JFrame {
         jButton1.setMaximumSize(new java.awt.Dimension(24, 24));
         jButton1.setMinimumSize(new java.awt.Dimension(24, 24));
         jButton1.setPreferredSize(new java.awt.Dimension(24, 24));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(720, 490, 40, 40);
 
@@ -140,6 +145,13 @@ public class inicio extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        telas.criargrupo telaCriarGrupo = new criargrupo();
+                            telaCriarGrupo.setVisible(true);
+                            dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
