@@ -4,6 +4,9 @@
  */
 package telas;
 
+import db.sql;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alves
@@ -33,28 +36,40 @@ public class perfil extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        txtTelefone = new javax.swing.JTextPane();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextPane3 = new javax.swing.JTextPane();
+        txtUser = new javax.swing.JTextPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextPane4 = new javax.swing.JTextPane();
+        txtNome = new javax.swing.JTextPane();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt (1).png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 410, 24, 24);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/definicoes.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/definicoes (1).png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(30, 510, 24, 24);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel5);
         jLabel5.setBounds(30, 460, 24, 24);
 
@@ -65,7 +80,7 @@ public class perfil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(540, 470, 160, 50);
+        jButton4.setBounds(360, 350, 160, 50);
 
         jButton5.setText("CANCELAR");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -74,34 +89,34 @@ public class perfil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(290, 470, 160, 50);
+        jButton5.setBounds(110, 350, 160, 50);
 
         jLabel2.setText("Digite seu TELEFONE:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(290, 280, 410, 16);
+        jLabel2.setBounds(110, 270, 410, 16);
 
-        jScrollPane2.setViewportView(jTextPane2);
+        jScrollPane2.setViewportView(txtTelefone);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(290, 300, 410, 20);
+        jScrollPane2.setBounds(110, 290, 410, 20);
 
         jLabel4.setText("Digite seu USER:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(290, 160, 410, 16);
+        jLabel4.setBounds(110, 150, 410, 16);
 
-        jScrollPane3.setViewportView(jTextPane3);
+        jScrollPane3.setViewportView(txtUser);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(290, 180, 410, 20);
+        jScrollPane3.setBounds(110, 170, 410, 20);
 
-        jScrollPane4.setViewportView(jTextPane4);
+        jScrollPane4.setViewportView(txtNome);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(290, 240, 410, 20);
+        jScrollPane4.setBounds(110, 230, 410, 20);
 
         jLabel10.setText("Digite seu NOME:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(290, 220, 410, 16);
+        jLabel10.setBounds(110, 210, 410, 16);
 
         jButton1.setText("MUDAR A SENHA");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +125,17 @@ public class perfil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(410, 360, 160, 50);
+        jButton1.setBounds(230, 430, 160, 50);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel6.setText("EDIÇÃO DE PERFIL");
+        jLabel6.setToolTipText("");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(120, 60, 410, 50);
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(110, 430, 350, 20);
 
         pack();
         setLocationRelativeTo(null);
@@ -118,6 +143,7 @@ public class perfil extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        Validar();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -130,6 +156,20 @@ public class perfil extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+        telas.gruposdousuario telaGruposUsuario = new gruposdousuario();
+                            telaGruposUsuario.setVisible(true);
+                            dispose(); 
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+        telas.inicio telaInicio = new inicio();
+                            telaInicio.setVisible(true);
+                            dispose(); 
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -179,11 +219,58 @@ public class perfil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextPane jTextPane2;
-    private javax.swing.JTextPane jTextPane3;
-    private javax.swing.JTextPane jTextPane4;
+    private javax.swing.JTextPane txtNome;
+    private javax.swing.JTextPane txtTelefone;
+    private javax.swing.JTextPane txtUser;
     // End of variables declaration//GEN-END:variables
+
+     private void Validar() {
+
+        if (txtUser.getText().isEmpty() || txtNome.getText().isEmpty() || txtTelefone.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha ao menos um dos campos para atualizar seu cadastro.");
+
+        } else if (!txtUser.getText().isEmpty() && txtNome.getText().isEmpty() && txtTelefone.getText().isEmpty()) {
+            System.out.println("NINCKNAME");
+            
+        } else if (txtUser.getText().isEmpty() && !txtNome.getText().isEmpty() && txtTelefone.getText().isEmpty()) {
+            System.out.println("NOME");
+            
+        } else if (txtUser.getText().isEmpty() && txtNome.getText().isEmpty() && !txtTelefone.getText().isEmpty()) {
+            System.out.println("TELEFONE");
+            
+        } else if (!txtUser.getText().isEmpty() && txtNome.getText().isEmpty() && txtTelefone.getText().isEmpty()) {
+            System.out.println("NINCKNAME E NOME");
+        
+        } else if (!txtUser.getText().isEmpty() && txtNome.getText().isEmpty() && !txtTelefone.getText().isEmpty()) {
+            System.out.println("NINCKNAME E TELEFONE");
+            
+        } else if (txtUser.getText().isEmpty() && !txtNome.getText().isEmpty() && !txtTelefone.getText().isEmpty()) {
+            System.out.println("NOME E TELEFONE");
+        
+        } else {  
+            System.out.println("TODOS");
+            atualizar(txtUser.getText(), txtNome.getText(), txtTelefone.getText());
+            
+        }
+     }
+        //TA FUNCIONANDO PRA ATUALIZAR MAS TEM Q ADICIONAR COISAS
+        //DEPOIS MUDAR ISSO!!!!!!!!!!!    
+        public void atualizar(String user, String nome, String telefone){
+        sql connect = new sql();
+        connect.connect();
+        String query ="UPDATE usuarios SET username = '" + user +"', nome = '" + nome +
+                "', celular = '" + telefone + "' WHERE id = 4"; //temporario
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar cadastro.","Erro ao atualizar cadastro.",2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Cadastro criado!", "Sucesso!",1);}
+        connect.disconnect();
+
+        
+    } 
 }

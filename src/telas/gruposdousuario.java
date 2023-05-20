@@ -8,12 +8,12 @@ package telas;
  *
  * @author Alves
  */
-public class inicio extends javax.swing.JFrame {
+public class gruposdousuario extends javax.swing.JFrame {
 
     /**
      * Creates new form login
      */
-    public inicio() {
+    public gruposdousuario() {
         initComponents();
     }
 
@@ -51,7 +51,6 @@ public class inicio extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
@@ -109,35 +108,22 @@ public class inicio extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(730, 40, 24, 24);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt (1).png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt.png"))); // NOI18N
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 410, 24, 24);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verificar.png"))); // NOI18N
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(240, 300, 24, 24);
+        jLabel4.setBounds(200, 320, 24, 24);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa (1).png"))); // NOI18N
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(30, 460, 24, 24);
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adicionar.png"))); // NOI18N
-        jButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jButton1.setMaximumSize(new java.awt.Dimension(24, 24));
-        jButton1.setMinimumSize(new java.awt.Dimension(24, 24));
-        jButton1.setPreferredSize(new java.awt.Dimension(24, 24));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(720, 490, 40, 40);
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(30, 460, 24, 24);
 
         jButton2.setText("TITULO DO GRUPO");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -156,12 +142,12 @@ public class inicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        telas.criargrupo telaCriarGrupo = new criargrupo();
-                            telaCriarGrupo.setVisible(true);
-                            dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+        telas.inicio telaInicio = new inicio();
+                            telaInicio.setVisible(true);
+                            dispose(); 
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
@@ -169,13 +155,6 @@ public class inicio extends javax.swing.JFrame {
                             telaPerfil.setVisible(true);
                             dispose(); 
     }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-    telas.gruposdousuario telaGruposUsuario = new gruposdousuario();
-                            telaGruposUsuario.setVisible(true);
-                            dispose();
-    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,27 +173,28 @@ public class inicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(gruposdousuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(gruposdousuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(gruposdousuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(gruposdousuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new inicio().setVisible(true);
+                new gruposdousuario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;

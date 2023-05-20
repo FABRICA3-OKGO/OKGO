@@ -61,6 +61,10 @@ public class cadastro extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        txtEmail.setAutoscrolls(false);
         jScrollPane1.setViewportView(txtEmail);
 
         getContentPane().add(jScrollPane1);
@@ -98,6 +102,9 @@ public class cadastro extends javax.swing.JFrame {
         getContentPane().add(txtSenhaConfirmar);
         txtSenhaConfirmar.setBounds(390, 430, 350, 20);
 
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
         txtTelefone.setAutoscrolls(false);
         jScrollPane2.setViewportView(txtTelefone);
 
@@ -133,11 +140,15 @@ public class cadastro extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(390, 170, 350, 16);
 
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane3.setViewportView(txtUser);
 
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(390, 190, 350, 20);
 
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane4.setViewportView(txtNome);
 
         getContentPane().add(jScrollPane4);
@@ -222,7 +233,6 @@ public class cadastro extends javax.swing.JFrame {
         } else if (!txtTelefone.getText().isEmpty()) { // se telefone NAO estiver vazio
             System.out.println("Campos de Cadastro preenchidos");
             cadastrar(txtEmail.getText(), txtUser.getText(), txtNome.getText(), txtTelefone.getText(), txtSenha.getText());
-            //JOptionPane.showMessageDialog(null, "Cadastro criado!");
             telas.login telaLogin = new login();
                             telaLogin.setVisible(true);
                             dispose();
@@ -230,7 +240,6 @@ public class cadastro extends javax.swing.JFrame {
         } else {
             System.out.println("Campos de Cadastro preenchidos");
             cadastrar(txtEmail.getText(), txtUser.getText(), txtNome.getText(), txtSenha.getText());
-            //JOptionPane.showMessageDialog(null, "Cadastro criado!");
             telas.login telaLogin = new login();
                             telaLogin.setVisible(true);
                             dispose();
