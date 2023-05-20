@@ -222,7 +222,7 @@ public class cadastro extends javax.swing.JFrame {
         } else if (!txtTelefone.getText().isEmpty()) { // se telefone NAO estiver vazio
             System.out.println("Campos de Cadastro preenchidos");
             cadastrar(txtEmail.getText(), txtUser.getText(), txtNome.getText(), txtTelefone.getText(), txtSenha.getText());
-            JOptionPane.showMessageDialog(null, "Cadastro criado!");
+            //JOptionPane.showMessageDialog(null, "Cadastro criado!");
             telas.login telaLogin = new login();
                             telaLogin.setVisible(true);
                             dispose();
@@ -230,7 +230,7 @@ public class cadastro extends javax.swing.JFrame {
         } else {
             System.out.println("Campos de Cadastro preenchidos");
             cadastrar(txtEmail.getText(), txtUser.getText(), txtNome.getText(), txtSenha.getText());
-            JOptionPane.showMessageDialog(null, "Cadastro criado!");
+            //JOptionPane.showMessageDialog(null, "Cadastro criado!");
             telas.login telaLogin = new login();
                             telaLogin.setVisible(true);
                             dispose();
@@ -240,16 +240,26 @@ public class cadastro extends javax.swing.JFrame {
     public void cadastrar(String email, String user, String nome, String senha){
         sql connect = new sql();
         connect.connect();
-        connect.insertSQL("insert into usuarios (username, nome, email, senha) values "          
-                +"( '" + user + "','" + nome + "','" + email + "','" + senha + "');");       
+        String query ="insert into usuarios (username, nome, email, senha) values "
+                +"( '" + user + "','" + nome + "','" + email + "','" + senha + "');";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Email já cadastrado.","Erro ao criar cadastro.",2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Cadastro criado!", "Sucesso!",1);}
         connect.disconnect();
+        
+        
     }
     
     public void cadastrar(String email, String user, String nome, String telefone, String senha){
          sql connect = new sql();
         connect.connect();
-        connect.insertSQL("insert into usuarios (username, nome, email, celular, senha) values "
-                +"( '" + user + "','" + nome + "','" + email + "','" + telefone + "','" + senha + "');"); 
+        String query = "insert into usuarios (username, nome, email, celular, senha) values "
+                +"( '" + user + "','" + nome + "','" + email + "','" + telefone + "','" + senha + "');";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Email já cadastrado.","Erro ao criar cadastro.",2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Cadastro criado!", "Sucesso!",1);}
         connect.disconnect();
         
     }

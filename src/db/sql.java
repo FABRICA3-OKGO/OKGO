@@ -91,15 +91,14 @@ public class sql {
         }
     }
     
-    public int insertSQL(String SQL){
-        int status = 0;
+    public int insertSQL(String SQL) {
         try {
             this.setStatement(getConn().createStatement());
-            this.getStatement().executeUpdate(SQL);                 
-            return status;
+            this.getStatement().executeUpdate(SQL);
+            return 1;
         } catch (SQLException ex) {
             ex.printStackTrace();
-            return status;
+            return 0;
         }
     }
     

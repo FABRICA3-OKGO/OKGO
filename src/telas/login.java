@@ -4,6 +4,11 @@
  */
 package telas;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alves
@@ -28,9 +33,9 @@ public class login extends javax.swing.JFrame {
 
         jFrame1 = new javax.swing.JFrame();
         jButton1 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtSenha = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        txtEmail = new javax.swing.JTextPane();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -54,10 +59,10 @@ public class login extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(390, 470, 350, 40);
-        getContentPane().add(jPasswordField1);
-        jPasswordField1.setBounds(390, 290, 350, 40);
+        getContentPane().add(txtSenha);
+        txtSenha.setBounds(390, 290, 350, 40);
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(txtEmail);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(390, 220, 350, 40);
@@ -77,7 +82,7 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(390, 130, 180, 50);
 
-        jLabel2.setText("Digite seu e-mail ou ID:");
+        jLabel2.setText("Digite seu e-mail:");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(390, 200, 350, 16);
 
@@ -150,6 +155,9 @@ public class login extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -161,8 +169,8 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextPane txtEmail;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }
