@@ -1,6 +1,6 @@
 package main;
 
-import db.sql;
+import DAO.sql;
 import telas.login;
 
 /**

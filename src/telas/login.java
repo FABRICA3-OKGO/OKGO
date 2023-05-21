@@ -4,7 +4,8 @@
  */
 package telas;
 
-import java.sql.PreparedStatement;
+import DTO.UsuarioDTO;
+import DAO.usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -36,7 +37,7 @@ public class login extends javax.swing.JFrame {
         txtSenha = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtEmail = new javax.swing.JTextPane();
-        jButton2 = new javax.swing.JButton();
+        botaoLogin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -67,14 +68,14 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(390, 220, 350, 40);
 
-        jButton2.setText("Login");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botaoLogin.setText("Login");
+        botaoLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botaoLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(390, 360, 350, 40);
+        getContentPane().add(botaoLogin);
+        botaoLogin.setBounds(390, 360, 350, 40);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("LOGIN");
@@ -117,10 +118,28 @@ public class login extends javax.swing.JFrame {
                             dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        System.out.println("");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
+        try {
+            UsuarioDTO objusuariodto = new UsuarioDTO();
+            objusuariodto.setEmail(txtEmail.getText());
+            objusuariodto.setSenha(txtSenha.getText());
+            
+            usuario objusuariodao = new usuario();
+            ResultSet rsusuariodao = objusuariodao.autenticacaoUsuario(objusuariodto);
+            
+            if (rsusuariodao.next()) {
+                telas.inicio telaInicio = new inicio();
+                            telaInicio.setVisible(true);
+                            dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Credenciais inválidas.");
+            }
+                    
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro ao conectar","login screen: " + erro, 2);
+        }
+        
+    }//GEN-LAST:event_botaoLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,11 +177,9 @@ public class login extends javax.swing.JFrame {
     }
     
     
-    
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoLogin;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -174,4 +191,5 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JTextPane txtEmail;
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
+
 }

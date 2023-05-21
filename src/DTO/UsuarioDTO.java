@@ -1,19 +1,13 @@
-package classes;
+package DTO;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javax.swing.JOptionPane;
-import java.sql.PreparedStatement;
-
-public class usuarioLogado {
+public class UsuarioDTO {
     
-    int id;
-    String username;
-    String nome;
-    String email;
-    String senha;
-    String celular;
+    private int id;
+    private String username;
+    private String nome;
+    private String email;
+    private String senha;
+    private String celular;
 
     public int getId() {
         return id;
@@ -62,8 +56,5 @@ public class usuarioLogado {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-    
-    
-
-    
+     
 }

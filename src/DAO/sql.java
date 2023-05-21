@@ -1,4 +1,5 @@
-package db;
+package DAO;
+
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -64,10 +65,25 @@ public class sql {
             if(conn != null){
                 System.out.println("Conexão estabelecida. " + conn);
             }              
-        } catch (Exception e) {
-            System.out.println("Falha ao conectar.  " + e.getMessage());
+        } catch (SQLException erro) {
+            System.out.println("Falha ao conectar.  " + erro.getMessage());
         }
     }
+    
+    public Connection conectaBD(){
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://" + server + "/" + databaseName, user, password);     
+            if(conn != null){
+                System.out.println("Conexão estabelecida. " + conn);
+            }              
+        } catch (SQLException erro) {
+            System.out.println("Falha ao conectar.  " + erro.getMessage());
+        }
+        
+        return conn;
+    }
+    
+
     
     public boolean disconnect(){
         try {
@@ -128,15 +144,7 @@ public class sql {
         connect.insertSQL("insert into usuarios (username, nome, email, telefone, senha) values "
                 +"(" + user + ',' + nome + ',' + email + ',' + telefone + ',' + senha + ");");       
         connect.disconnect();
-        
     }
-    
-    
      
-
    
-    
-    
-    
- 
 }

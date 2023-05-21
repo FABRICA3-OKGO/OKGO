@@ -5,7 +5,7 @@
 package telas;
 
 import com.formdev.flatlaf.FlatLightLaf;
-import db.sql;
+import DAO.sql;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
