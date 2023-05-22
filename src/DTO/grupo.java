@@ -11,7 +11,8 @@ public class grupo {
     String nome;
     String descricao;
     String contato;
-    String dataCriacao;//String por enquanto
+    String dataCriacao;
+    String Criador;
 
     public int getId() {
         return id;
@@ -68,6 +69,16 @@ public class grupo {
     public void setDataCriacao(String dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
+
+    public String getCriador() {
+        return Criador;
+    }
+
+    public void setCriador(String Criador) {
+        this.Criador = Criador;
+    }
+    
+    
     
     
 }

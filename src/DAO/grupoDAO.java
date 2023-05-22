@@ -1,10 +1,14 @@
 package DAO;
 
 
+import DTO.grupo;
+import DAO.sql;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,20 +35,36 @@ public class grupoDAO {
         }
     }
     
-    public ResultSet GruposInicio(){
+    public List<grupo> GruposInicio(){
         Connection conn; 
         conn = new sql().conectaBD();
+        
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<grupo> grupos = new ArrayList<>();
+                
         try {
-            String sql = "SELECT * FROM grupos ORDER by data_criacao";
+            String sql = "SELECT gru.nome, tag, gru.id, usu.username AS criador"
+                    + " FROM grupos AS gru LEFT JOIN usuarios as usu on"
+                    + " gru.criador_id = usu.id ORDER by id;";
             PreparedStatement pstm = conn.prepareStatement(sql);            
-            ResultSet rs = pstm.executeQuery();
-            return rs;           
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+                grupo grupo = new grupo();
+                grupo.setId(rs.getInt("id"));
+                grupo.setNome(rs.getString("nome"));
+                grupo.setTag(rs.getString("tag"));
+                grupo.setCriador(rs.getString("criador"));
+                grupos.add(grupo);
+            }
             
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Não foi possivel recuperar informações dos grupos mais recentes: " + erro,
                     "database errror" , 2);
-            return null; 
         }
+        return grupos;
     }
     
   

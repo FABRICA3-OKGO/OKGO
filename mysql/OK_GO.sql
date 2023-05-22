@@ -53,9 +53,20 @@ create trigger apagar_usuario before delete on usuarios
 	for each row
     begin
          INSERT INTO membros (id_membro)
-         values (OLD.id_membro);
+         values (OLD.usuario.id);
          INSERT INTO grupos (criador_id)
-         values (OLD.criador_id);
+         values (OLD.usuario.id);
+        end$
+delimiter ;
+
+delimiter $
+create trigger apagar_usuario before delete on usuarios
+	for each row
+    begin
+         INSERT INTO membros (id_membro)
+         values (OLD.usuario.id);
+         INSERT INTO grupos (criador_id)
+         values (OLD.usuario.id);
         end$
 delimiter ;
 
@@ -101,17 +112,22 @@ select
 ##select * from usuarios;
     
 ##GRUPO
-select
-	gru.id,
+SELECT 
+    gru.id,
     tag,
     gru.nome,
     descricao,
     contato,
-    usu.username as criador,
+    usu.username AS criador,
     data_criacao
-from grupos as gru
-left join usuarios as usu
-on gru.criador_id = usu.id;
+FROM
+    grupos AS gru
+        LEFT JOIN
+    usuarios AS usu ON gru.criador_id = usu.id;
+    
+##SELECT gru.nome, tag, gru.id, usu.username AS criador FROM grupos AS gru LEFT JOIN usuarios as usu on gru.criador_id = usu.id ORDER by id;
+
+##
 
 ##MEMBROS
 select 
