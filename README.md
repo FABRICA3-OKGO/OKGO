@@ -69,21 +69,29 @@ https://github.com/JFormDesigner/FlatLaf
 ## Novos Recursos
 
 Alteração de Senha
+
 Excluir Conta
 
 ## Resolvendo Problemas 
 
 Exibição de Grupos na tela Inicial
+
 Visualizar Detalhes do Grupo
+
 Entrar no Grupo
+
 Visualizar como Membro
+
 Gerir Grupo
 
 ## Recursos inseridos 🧰
 
 Criar Cadastro
+
 Acessar Cadastro
+
 Editar Cadastro
+
 Criar Grupo
 
 ![image](https://user-images.githubusercontent.com/68714869/230674651-ac56638e-39fa-49be-9f9e-0be217c89fa8.png)
