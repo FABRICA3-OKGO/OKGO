@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-public class usuario {
+public class usuarioDAO {
     Connection conn;
     
     public ResultSet autenticacaoUsuario(UsuarioDTO objusuariodto){

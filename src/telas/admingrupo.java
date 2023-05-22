@@ -43,6 +43,7 @@ public class admingrupo extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(650, 600));
         getContentPane().setLayout(null);
 
         jButton3.setText("Apagar Grupo");

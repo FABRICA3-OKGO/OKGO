@@ -43,6 +43,7 @@ public class participantegrupo extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(610, 600));
         getContentPane().setLayout(null);
 
         jButton1.setText("TITULO DO GRUPO");

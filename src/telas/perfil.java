@@ -5,7 +5,7 @@
 package telas;
 
 import DAO.sql;
-import DTO.UsuarioDTO;
+import telas.login;
 import javax.swing.JOptionPane;
 
 /**
@@ -49,7 +49,7 @@ public class perfil extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(600, 600));
         getContentPane().setLayout(null);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt (1).png"))); // NOI18N
@@ -74,7 +74,7 @@ public class perfil extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(30, 460, 24, 24);
 
-        jButton4.setText("SALVAR ALTERAÇÕES");
+        jButton4.setText("Salvar Alterações");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -83,7 +83,7 @@ public class perfil extends javax.swing.JFrame {
         getContentPane().add(jButton4);
         jButton4.setBounds(360, 350, 160, 50);
 
-        jButton5.setText("CANCELAR");
+        jButton5.setText("Cancelar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -96,6 +96,8 @@ public class perfil extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(110, 270, 410, 16);
 
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane2.setViewportView(txtTelefone);
 
         getContentPane().add(jScrollPane2);
@@ -105,11 +107,15 @@ public class perfil extends javax.swing.JFrame {
         getContentPane().add(jLabel4);
         jLabel4.setBounds(110, 150, 410, 16);
 
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane3.setViewportView(txtUser);
 
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(110, 170, 410, 20);
 
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane4.setViewportView(txtNome);
 
         getContentPane().add(jScrollPane4);
@@ -119,7 +125,7 @@ public class perfil extends javax.swing.JFrame {
         getContentPane().add(jLabel10);
         jLabel10.setBounds(110, 210, 410, 16);
 
-        jButton1.setText("MUDAR A SENHA");
+        jButton1.setText("Mudar sua Senha");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -145,6 +151,10 @@ public class perfil extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         Validar();
+        telas.inicio telaInicio = new inicio();
+                            telaInicio.setVisible(true);
+                            dispose();
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -259,17 +269,15 @@ public class perfil extends javax.swing.JFrame {
             
         }
      }
-        //TA FUNCIONANDO PRA ATUALIZAR MAS TEM Q ADICIONAR COISAS
-        //DEPOIS MUDAR ISSO!!!!!!!!!!!    
+        
         public void atualizar(String user, String nome, String telefone){
         sql connect = new sql();
         connect.connect();
-        String query ="UPDATE usuarios SET username = '" + user +"', nome = '" + nome +
-                "', celular = '" + telefone + "' WHERE id = 4"; //temporario
+        String query = "UPDATE usuarios SET username = '" + user + "', nome = '" + nome +"', celular = '" + telefone + "' WHERE id = " + login.id;
         if (connect.insertSQL(query) == 0) {
             JOptionPane.showMessageDialog(null, "Erro ao atualizar cadastro.","Erro ao atualizar cadastro.",2);
         }else{
-            JOptionPane.showMessageDialog(null, "Cadastro criado!", "Sucesso!",1);}
+            JOptionPane.showMessageDialog(null, "Cadastro atualizado!", "Sucesso!",1);}
         connect.disconnect();
 
         

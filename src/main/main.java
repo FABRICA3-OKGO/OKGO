@@ -1,6 +1,4 @@
 package main;
-
-import DAO.sql;
 import telas.login;
 
 /**
@@ -16,7 +14,6 @@ public class main {
         
         telas.login login = new login();
         login.setVisible(true);
-        
         
         
         

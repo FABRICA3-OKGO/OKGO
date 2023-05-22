@@ -28,21 +28,21 @@ public class criargrupo extends javax.swing.JFrame {
 
         jButton3 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtDescricao = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtContato = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
+        btnCriarGrupo = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        txtNomeGrupo = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtTag = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(550, 600));
         getContentPane().setLayout(null);
 
         jButton3.setText("VOLTAR");
@@ -54,9 +54,9 @@ public class criargrupo extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(60, 460, 130, 50);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        txtDescricao.setColumns(20);
+        txtDescricao.setRows(5);
+        jScrollPane2.setViewportView(txtDescricao);
 
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(60, 220, 430, 110);
@@ -64,9 +64,9 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane3.setViewportView(jTextArea2);
+        txtContato.setColumns(20);
+        txtContato.setRows(5);
+        jScrollPane3.setViewportView(txtContato);
 
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(60, 370, 430, 60);
@@ -79,14 +79,14 @@ public class criargrupo extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(60, 340, 430, 30);
 
-        jButton5.setText("CRIAR GRUPO");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnCriarGrupo.setText("CRIAR GRUPO");
+        btnCriarGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnCriarGrupoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(350, 460, 140, 50);
+        getContentPane().add(btnCriarGrupo);
+        btnCriarGrupo.setBounds(350, 460, 140, 50);
 
         jLabel4.setText("TITULO DO GRUPO");
         getContentPane().add(jLabel4);
@@ -95,9 +95,9 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane5.setViewportView(jTextArea4);
+        txtNomeGrupo.setColumns(20);
+        txtNomeGrupo.setRows(5);
+        jScrollPane5.setViewportView(txtNomeGrupo);
 
         getContentPane().add(jScrollPane5);
         jScrollPane5.setBounds(60, 60, 430, 20);
@@ -105,9 +105,9 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane4.setViewportView(jTextArea3);
+        txtTag.setColumns(20);
+        txtTag.setRows(5);
+        jScrollPane4.setViewportView(txtTag);
 
         getContentPane().add(jScrollPane4);
         jScrollPane4.setBounds(60, 130, 430, 30);
@@ -127,9 +127,9 @@ public class criargrupo extends javax.swing.JFrame {
                             dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnCriarGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarGrupoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnCriarGrupoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,8 +168,8 @@ public class criargrupo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCriarGrupo;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -178,9 +178,9 @@ public class criargrupo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea txtContato;
+    private javax.swing.JTextArea txtDescricao;
+    private javax.swing.JTextArea txtNomeGrupo;
+    private javax.swing.JTextArea txtTag;
     // End of variables declaration//GEN-END:variables
 }

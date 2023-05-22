@@ -25,7 +25,7 @@ CREATE TABLE grupos (
   tag					VARCHAR(20)				NOT NULL, 
   nome  				VARCHAR(100) 			NOT NULL,
   descricao 			VARCHAR(500) 			NOT NULL,
-  contato				VARCHAR(100),			
+  contato				VARCHAR(100)			NOT NULL,			
   criador_id			INT						NOT NULL,
   data_criação 			TIMESTAMP 				DEFAULT 		CURRENT_TIMESTAMP,
   PRIMARY KEY (id),
@@ -51,9 +51,9 @@ insert into avaliacoes (usuario_id, nota) values
 (2, 5), (2, 4), (2, 5),
 (3, 1), (3, 3), (3, 2);
 
-insert into grupos (tag, nome, descricao, criador_id) values
-("D&D", "Mesa de RPG D&D", "RPG com os amigos", 2 ),
-("Teste", "Grupo de teste", "descrição mt boa", 3 );
+insert into grupos (tag, nome, descricao, criador_id,contato) values
+("D&D", "Mesa de RPG D&D", "RPG com os amigos", 2, "discord.gg/rpg" ),
+("Teste", "Grupo de teste", "descrição mt boa", 3, "aaaaaaa" );
  
 insert into membros (id_grupo, id_membro) values
 (1, 2), (1, 3),
@@ -82,6 +82,8 @@ select
     left join usuarios as usu 
     on ava.usuario_id = usu.id
     group by usuario_id;
+    
+##select * from usuarios;
     
 ##GRUPO
 select

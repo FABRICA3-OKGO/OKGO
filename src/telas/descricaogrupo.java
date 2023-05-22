@@ -56,7 +56,7 @@ public class descricaogrupo extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTextArea3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(610, 600));
         getContentPane().setLayout(null);
 
         jButton3.setText("VOLTAR");

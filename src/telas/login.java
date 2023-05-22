@@ -5,7 +5,8 @@
 package telas;
 
 import DTO.UsuarioDTO;
-import DAO.usuario;
+import DAO.usuarioDAO;
+import classes.usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -15,12 +16,20 @@ import javax.swing.JOptionPane;
  * @author Alves
  */
 public class login extends javax.swing.JFrame {
+    
+    public static int id;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     /**
      * Creates new form login
      */
     public login() {
-        initComponents();
+        initComponents();       
     }
 
     /**
@@ -122,12 +131,12 @@ public class login extends javax.swing.JFrame {
         try {
             UsuarioDTO objusuariodto = new UsuarioDTO();
             objusuariodto.setEmail(txtEmail.getText());
-            objusuariodto.setSenha(txtSenha.getText());
-            
-            usuario objusuariodao = new usuario();
+            objusuariodto.setSenha(txtSenha.getText());           
+            usuarioDAO objusuariodao = new usuarioDAO();
             ResultSet rsusuariodao = objusuariodao.autenticacaoUsuario(objusuariodto);
             
             if (rsusuariodao.next()) {
+                this.id = rsusuariodao.getObject("id", int.class);
                 telas.inicio telaInicio = new inicio();
                             telaInicio.setVisible(true);
                             dispose();
@@ -191,5 +200,5 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JTextPane txtEmail;
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
-
+    
 }

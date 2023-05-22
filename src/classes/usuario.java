@@ -1,14 +1,30 @@
-package DTO;
+package classes;
 
-public class UsuarioDTO {
+/**
+ *
+ * @author cassi
+ */
+public class usuario {
+    private int id;//
+    private String username;//
+    private String nome;//
+    private String email;//
+    private String senha;//
+    private String celular;//
+
+    public usuario() {
+    }
+
+    public usuario(int id, String username, String nome, String email, String senha, String celular) {
+        this.id = id;
+        this.username = username;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.celular = celular;
+    }
     
-    private int id;
-    private String username;
-    private String nome;
-    private String email;
-    private String senha;
-    private String celular;
-
+    
     public int getId() {
         return id;
     }
@@ -58,3 +74,5 @@ public class UsuarioDTO {
     }
       
 }
+    
+
