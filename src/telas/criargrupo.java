@@ -5,6 +5,10 @@
 package telas;
 
 import DAO.sql;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -218,9 +222,10 @@ public class criargrupo extends javax.swing.JFrame {
                 +"( '" + tag + "','" + nome + "','" + descricao + "','" + login.id + "','" + contato + "');";
         if (connect.insertSQL(query) == 0) {
             JOptionPane.showMessageDialog(null, "Não foi possível criar o grupo.","Erro ao criar grupo.",2);
+            connect.disconnect();
         }else{
             JOptionPane.showMessageDialog(null, "Grupo criado!", "Sucesso!",1);}
         connect.disconnect();
     }
-    
+     
 }

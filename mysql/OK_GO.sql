@@ -23,7 +23,7 @@ CREATE TABLE avaliacoes (
 CREATE TABLE grupos (
   id					INT 					NOT NULL 			AUTO_INCREMENT,
   tag					VARCHAR(20)				NOT NULL, 
-  nome  				VARCHAR(100) 			NOT NULL,
+  nome  				VARCHAR(100) 			NOT NULL			UNIQUE,
   descricao 			VARCHAR(500) 			NOT NULL,
   contato				VARCHAR(100)			NOT NULL,			
   criador_id			INT						NOT NULL,
@@ -39,7 +39,15 @@ CREATE TABLE membros (
   FOREIGN KEY (id_membro) REFERENCES usuarios(id)
 );
 
--- -----------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+delimiter $
+create trigger criador_membro after insert on grupos
+	for each row
+    begin
+		insert into membros values (new.id, new.criador_id);
+        end$
+delimiter ;
+
 
 insert into usuarios (username, nome, email, senha, celular) values
 ('Joao123','Joao Victor', 'joao@gmail.com', 'joaozinho123', '15999999999'),
