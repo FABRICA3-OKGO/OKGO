@@ -41,10 +41,10 @@ public class descricaogrupo extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
+        txtNomeGrupo = new javax.swing.JLabel();
 
         jLabel3.setText("TAG");
 
@@ -68,6 +68,7 @@ public class descricaogrupo extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(80, 460, 130, 50);
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
@@ -78,6 +79,7 @@ public class descricaogrupo extends javax.swing.JFrame {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
+        jTextArea2.setEditable(false);
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane3.setViewportView(jTextArea2);
@@ -130,15 +132,6 @@ public class descricaogrupo extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(390, 120, 180, 390);
 
-        jButton1.setText("TITULO DO GRUPO");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(80, 60, 300, 40);
-
         jLabel4.setText("TAG");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(80, 120, 300, 30);
@@ -146,12 +139,19 @@ public class descricaogrupo extends javax.swing.JFrame {
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
+        jTextArea4.setEditable(false);
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
         jScrollPane5.setViewportView(jTextArea4);
 
         getContentPane().add(jScrollPane5);
         jScrollPane5.setBounds(80, 150, 300, 30);
+
+        txtNomeGrupo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtNomeGrupo.setText("PLACEHOLDER");
+        txtNomeGrupo.setToolTipText("");
+        getContentPane().add(txtNomeGrupo);
+        txtNomeGrupo.setBounds(60, 20, 510, 80);
 
         pack();
         setLocationRelativeTo(null);
@@ -167,10 +167,6 @@ public class descricaogrupo extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,7 +205,6 @@ public class descricaogrupo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JFrame jFrame1;
@@ -228,5 +223,6 @@ public class descricaogrupo extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JLabel txtNomeGrupo;
     // End of variables declaration//GEN-END:variables
 }
