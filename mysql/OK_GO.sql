@@ -51,7 +51,7 @@ insert into avaliacoes (usuario_id, nota) values
 (2, 5), (2, 4), (2, 5),
 (3, 1), (3, 3), (3, 2);
 
-insert into grupos (tag, nome, descricao, criador_id,contato) values
+insert into grupos (tag, nome, descricao, criador_id, contato) values
 ("D&D", "Mesa de RPG D&D", "RPG com os amigos", 2, "discord.gg/rpg" ),
 ("Teste", "Grupo de teste", "descrição mt boa", 3, "aaaaaaa" );
  
@@ -91,6 +91,7 @@ select
     tag,
     gru.nome,
     descricao,
+    contato,
     usu.username as criador,
     data_criação
 from grupos as gru

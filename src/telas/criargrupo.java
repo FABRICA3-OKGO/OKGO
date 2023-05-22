@@ -4,6 +4,9 @@
  */
 package telas;
 
+import DAO.sql;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Alves
@@ -129,6 +132,7 @@ public class criargrupo extends javax.swing.JFrame {
 
     private void btnCriarGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarGrupoActionPerformed
         // TODO add your handling code here:
+        Validar();
     }//GEN-LAST:event_btnCriarGrupoActionPerformed
 
     /**
@@ -183,4 +187,32 @@ public class criargrupo extends javax.swing.JFrame {
     private javax.swing.JTextArea txtNomeGrupo;
     private javax.swing.JTextArea txtTag;
     // End of variables declaration//GEN-END:variables
+
+    //metodos
+    private void Validar() {
+
+        if (txtNomeGrupo.getText().isEmpty() || txtTag.getText().isEmpty() || txtDescricao.getText().isEmpty() || txtContato.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos de cadastro corretamente!");
+
+        } else {
+            System.out.println("Informações de Grupo preenchidas corretamente.");
+            criarGrupo(txtNomeGrupo.getText(), txtTag.getText(), txtDescricao.getText(), txtContato.getText());
+            telas.inicio telaInicio = new inicio();
+                            telaInicio.setVisible(true);
+                            dispose();
+        }
+    } 
+    
+    public void criarGrupo(String nome, String tag, String descricao, String contato){
+        sql connect = new sql();
+        connect.connect();
+        String query ="insert into grupos (tag, nome, descricao, criador_id, contato) values "
+                +"( '" + tag + "','" + nome + "','" + descricao + "','" + login.id + "','" + contato + "');";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Não foi possível criar o grupo.","Erro ao criar grupo.",2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Grupo criado!", "Sucesso!",1);}
+        connect.disconnect();
+    }
+    
 }
