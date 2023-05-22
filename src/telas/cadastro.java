@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package telas;
 
 import com.formdev.flatlaf.FlatLightLaf;
@@ -13,12 +9,12 @@ import javax.swing.UIManager;
  *
  * @author Alves
  */
-public class cadastro extends javax.swing.JFrame {
+public class Cadastro extends javax.swing.JFrame {
 
     /**
      * Creates new form login
      */
-    public cadastro() {
+    public Cadastro() {
         initComponents();
     }
 
@@ -173,7 +169,7 @@ public class cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        telas.login telaLogin = new login();
+        telas.Login telaLogin = new Login();
                             telaLogin.setVisible(true);
                             dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -202,21 +198,23 @@ public class cadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cadastro().setVisible(true);
+                new Cadastro().setVisible(true);
             }
         });
     }
@@ -233,14 +231,14 @@ public class cadastro extends javax.swing.JFrame {
         } else if (!txtTelefone.getText().isEmpty()) { // se telefone NAO estiver vazio
             System.out.println("Campos de Cadastro preenchidos");
             cadastrar(txtEmail.getText(), txtUser.getText(), txtNome.getText(), txtTelefone.getText(), txtSenha.getText());
-            telas.login telaLogin = new login();
+            telas.Login telaLogin = new Login();
                             telaLogin.setVisible(true);
                             dispose();
 
         } else {
             System.out.println("Campos de Cadastro preenchidos");
             cadastrar(txtEmail.getText(), txtUser.getText(), txtNome.getText(), txtSenha.getText());
-            telas.login telaLogin = new login();
+            telas.Login telaLogin = new Login();
                             telaLogin.setVisible(true);
                             dispose();
         }

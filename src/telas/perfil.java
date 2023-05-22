@@ -5,19 +5,19 @@
 package telas;
 
 import DAO.sql;
-import telas.login;
+import telas.Login;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Alves
  */
-public class perfil extends javax.swing.JFrame {
+public class Perfil extends javax.swing.JFrame {
 
     /**
      * Creates new form login
      */
-    public perfil() {
+    public Perfil() {
         initComponents();
     }
 
@@ -44,10 +44,12 @@ public class perfil extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         txtNome = new javax.swing.JTextPane();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        btnMudarSenha = new javax.swing.JButton();
+        btnApagarConta = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 600));
@@ -76,6 +78,9 @@ public class perfil extends javax.swing.JFrame {
         jLabel5.setBounds(30, 460, 24, 24);
 
         jButton4.setText("Salvar Alterações");
+        jButton4.setMaximumSize(new java.awt.Dimension(76, 22));
+        jButton4.setMinimumSize(new java.awt.Dimension(76, 22));
+        jButton4.setPreferredSize(new java.awt.Dimension(76, 22));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -126,15 +131,6 @@ public class perfil extends javax.swing.JFrame {
         getContentPane().add(jLabel10);
         jLabel10.setBounds(110, 210, 410, 16);
 
-        jButton1.setText("Mudar sua Senha");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(230, 430, 160, 50);
-
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setText("EDIÇÃO DE PERFIL");
         jLabel6.setToolTipText("");
@@ -152,19 +148,55 @@ public class perfil extends javax.swing.JFrame {
         jPanel1.setRequestFocusEnabled(false);
         jPanel1.setVerifyInputWhenFocusTarget(false);
 
+        btnMudarSenha.setText("Mudar sua Senha");
+        btnMudarSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMudarSenhaActionPerformed(evt);
+            }
+        });
+
+        btnApagarConta.setText("Apagar Conta");
+        btnApagarConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnApagarContaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 466, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(btnMudarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addComponent(btnApagarConta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 596, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(485, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMudarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnApagarConta, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61))
         );
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(70, 0, 470, 600);
+
+        jButton6.setText("Salvar Alterações");
+        jButton6.setMaximumSize(new java.awt.Dimension(76, 22));
+        jButton6.setMinimumSize(new java.awt.Dimension(76, 22));
+        jButton6.setPreferredSize(new java.awt.Dimension(76, 22));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6);
+        jButton6.setBounds(360, 350, 160, 50);
 
         pack();
         setLocationRelativeTo(null);
@@ -173,7 +205,7 @@ public class perfil extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         Validar();
-        telas.inicio telaInicio = new inicio();
+        telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();
         
@@ -181,28 +213,60 @@ public class perfil extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        telas.inicio telaInicio = new inicio();
+        telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();                                
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnMudarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMudarSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        String senhaNova = JOptionPane.showInputDialog("Insira sua nova senha");
+        
+        
+        if (!senhaNova.equals("")) { //Cancelar
+            System.out.println(senhaNova);
+            atualizarSenha(senhaNova);
+            //telas.Perfil telaPerfil = new Perfil();
+            //                telaPerfil.setVisible(true);
+            //                dispose();                   
+        }
+             
+        
+    }//GEN-LAST:event_btnMudarSenhaActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-        telas.gruposdousuario telaGruposUsuario = new gruposdousuario();
+        telas.MeusGrupos telaGruposUsuario = new MeusGrupos();
                             telaGruposUsuario.setVisible(true);
                             dispose(); 
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        telas.inicio telaInicio = new inicio();
+        telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose(); 
     }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void btnApagarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarContaActionPerformed
+        // TODO add your handling code here:      
+        Object[] options = { "Cancelar", "Confirmar" };
+        int escolha = (JOptionPane.showOptionDialog(null, "Tem certeza que deseja apagar sua conta?", "Apagar conta",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]));
+        System.out.println(escolha);
+        if (escolha == 0) { //Cancelar
+            telas.Perfil telaPerfil = new Perfil();
+                            telaPerfil.setVisible(true);
+                            dispose();                   
+        }else //Confirmar
+            Apagar(); 
+     
+    
+    }//GEN-LAST:event_btnApagarContaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,14 +285,18 @@ public class perfil extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Perfil.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -237,15 +305,17 @@ public class perfil extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new perfil().setVisible(true);
+                new Perfil().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnApagarConta;
+    private javax.swing.JButton btnMudarSenha;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -296,13 +366,36 @@ public class perfil extends javax.swing.JFrame {
         public void atualizar(String user, String nome, String telefone){
         sql connect = new sql();
         connect.connect();
-        String query = "UPDATE usuarios SET username = '" + user + "', nome = '" + nome +"', celular = '" + telefone + "' WHERE id = " + login.id;
+        String query = "UPDATE usuarios SET username = '" + user + "', nome = '" + nome +"', celular = '" + telefone + "' WHERE id = " + Login.id;
         if (connect.insertSQL(query) == 0) {
             JOptionPane.showMessageDialog(null, "Erro ao atualizar cadastro.","Erro ao atualizar cadastro.",2);
         }else{
             JOptionPane.showMessageDialog(null, "Cadastro atualizado!", "Sucesso!",1);}
-        connect.disconnect();
-
+        connect.disconnect();    
+        }
         
-    } 
+        public void atualizarSenha(String senha){
+        sql connect = new sql();
+        connect.connect();
+        String query = "UPDATE usuarios SET senha = '" + senha + "' WHERE id = " + Login.id;
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar cadastro.","Erro ao atualizar cadastro.",2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Cadastro atualizado!", "Sucesso!",1);}
+        connect.disconnect();    
+        } 
+        
+        public void Apagar(){
+        sql connect = new sql();
+        connect.connect();
+        String query = "UPDATE usuarios SET email = null ,username = 'Usuario Apagado', nome = '', senha = '', celular = null WHERE id = '" + Login.id + "'";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar cadastro.","Erro ao atualizar cadastro.",2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Conta Encerrada com sucesso.", "Cadastro Deletado.",1);}
+        connect.disconnect();    
+        telas.Login telaLogin = new Login();
+                            telaLogin.setVisible(true);
+                            dispose();
+        } 
 }

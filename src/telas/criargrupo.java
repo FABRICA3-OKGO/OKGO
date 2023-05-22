@@ -15,12 +15,12 @@ import javax.swing.JOptionPane;
  *
  * @author Alves
  */
-public class criargrupo extends javax.swing.JFrame {
+public class CriarGrupo extends javax.swing.JFrame {
 
     /**
      * Creates new form login
      */
-    public criargrupo() {
+    public CriarGrupo() {
         initComponents();
     }
 
@@ -136,7 +136,7 @@ public class criargrupo extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        telas.inicio telaInicio = new inicio();
+        telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -163,21 +163,23 @@ public class criargrupo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(criargrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarGrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(criargrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarGrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(criargrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarGrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(criargrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarGrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new criargrupo().setVisible(true);
+                new CriarGrupo().setVisible(true);
             }
         });
     }
@@ -205,11 +207,10 @@ public class criargrupo extends javax.swing.JFrame {
 
         if (txtNomeGrupo.getText().isEmpty() || txtTag.getText().isEmpty() || txtDescricao.getText().isEmpty() || txtContato.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos de cadastro corretamente!");
-
         } else {
             System.out.println("Informações de Grupo preenchidas corretamente.");
             criarGrupo(txtNomeGrupo.getText(), txtTag.getText(), txtDescricao.getText(), txtContato.getText());
-            telas.inicio telaInicio = new inicio();
+            telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();
         }
@@ -219,7 +220,7 @@ public class criargrupo extends javax.swing.JFrame {
         sql connect = new sql();
         connect.connect();
         String query ="insert into grupos (tag, nome, descricao, criador_id, contato) values "
-                +"( '" + tag + "','" + nome + "','" + descricao + "','" + login.id + "','" + contato + "');";
+                +"( '" + tag + "','" + nome + "','" + descricao + "','" + Login.id + "','" + contato + "');";
         if (connect.insertSQL(query) == 0) {
             JOptionPane.showMessageDialog(null, "Não foi possível criar o grupo.","Erro ao criar grupo.",2);
             connect.disconnect();

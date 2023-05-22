@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package telas;
 
 import DTO.UsuarioDTO;
 import DAO.usuarioDAO;
-import classes.usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -15,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author Alves
  */
-public class login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
     
     public static int id;
     public int getId() {
@@ -28,7 +24,7 @@ public class login extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
-    public login() {
+    public Login() {
         initComponents();       
     }
 
@@ -122,12 +118,17 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        cadastro telaCadastro = new cadastro();
+        Cadastro telaCadastro = new Cadastro();
                             telaCadastro.setVisible(true);
                             dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
+        
+        if (txtEmail.getText() == "" || txtSenha.getText() == "") {
+            JOptionPane.showMessageDialog(null, "Insira um email e senha para logar.");
+        }else
+            
         try {
             UsuarioDTO objusuariodto = new UsuarioDTO();
             objusuariodto.setEmail(txtEmail.getText());
@@ -137,7 +138,7 @@ public class login extends javax.swing.JFrame {
             
             if (rsusuariodao.next()) {
                 this.id = rsusuariodao.getObject("id", int.class);
-                telas.inicio telaInicio = new inicio();
+                telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();
             }else{
@@ -167,20 +168,21 @@ public class login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login().setVisible(true);
+                new Login().setVisible(true);
             }
         });
     }

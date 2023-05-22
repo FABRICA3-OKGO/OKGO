@@ -1,5 +1,5 @@
 package main;
-import telas.login;
+import telas.Login;
 
 /**
  *
@@ -12,7 +12,7 @@ public class main {
      */
     public static void main(String[] args) {
         
-        telas.login login = new login();
+        telas.Login login = new Login();
         login.setVisible(true);
         
         

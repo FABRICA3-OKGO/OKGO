@@ -1,7 +1,6 @@
 package DAO;
 
 
-import DTO.grupo;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,9 +12,9 @@ import javax.swing.JOptionPane;
  * @author cassi
  */
 public class grupoDAO {
-
-    Connection conn;    
+ 
     public ResultSet pesquisarGrupo(String tag){
+        Connection conn; 
         conn = new sql().conectaBD();
         try {
             String sql = "SELECT * FROM grupos WHERE tag = ?";
@@ -32,7 +31,21 @@ public class grupoDAO {
         }
     }
     
+    public ResultSet GruposInicio(){
+        Connection conn; 
+        conn = new sql().conectaBD();
+        try {
+            String sql = "SELECT * FROM grupos ORDER by data_criacao";
+            PreparedStatement pstm = conn.prepareStatement(sql);            
+            ResultSet rs = pstm.executeQuery();
+            return rs;           
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Não foi possivel recuperar informações dos grupos mais recentes: " + erro,
+                    "database errror" , 2);
+            return null; 
+        }
+    }
     
-
-    
+  
 }
