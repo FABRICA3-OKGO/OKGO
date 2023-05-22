@@ -76,23 +76,39 @@ Excluir Conta
 
 Exibição de Grupos na tela Inicial
 
+View Tela Inicial
+
 Visualizar Detalhes do Grupo
+
+View Tela do Grupo
 
 Entrar no Grupo
 
 Visualizar como Membro
 
+View Tela de Membro
+
 Gerir Grupo
+
+View Tela Adm do Grupo
 
 ## Recursos inseridos 🧰
 
 Criar Cadastro
 
+View de Cadastro
+
 Acessar Cadastro
+
+View de Login
 
 Editar Cadastro
 
+View de Perfil
+
 Criar Grupo
+
+View de Criação de Grupo
 
 ![image](https://user-images.githubusercontent.com/68714869/230674651-ac56638e-39fa-49be-9f9e-0be217c89fa8.png)
 
