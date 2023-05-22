@@ -43,6 +43,7 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         txtTag = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
+        txtNomeGrupo2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(550, 600));
@@ -55,14 +56,14 @@ public class criargrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(60, 460, 130, 50);
+        jButton3.setBounds(60, 500, 130, 50);
 
         txtDescricao.setColumns(20);
         txtDescricao.setRows(5);
         jScrollPane2.setViewportView(txtDescricao);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(60, 220, 430, 110);
+        jScrollPane2.setBounds(60, 270, 430, 110);
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -72,15 +73,15 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane3.setViewportView(txtContato);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(60, 370, 430, 60);
+        jScrollPane3.setBounds(60, 420, 430, 60);
 
         jLabel1.setText("INSIRA A DESCRIÇÃO DO GRUPO");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 190, 430, 30);
+        jLabel1.setBounds(60, 240, 430, 30);
 
         jLabel2.setText("MEIO DE CONTATO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 340, 430, 30);
+        jLabel2.setBounds(60, 390, 430, 30);
 
         btnCriarGrupo.setText("CRIAR GRUPO");
         btnCriarGrupo.addActionListener(new java.awt.event.ActionListener() {
@@ -89,11 +90,11 @@ public class criargrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCriarGrupo);
-        btnCriarGrupo.setBounds(350, 460, 140, 50);
+        btnCriarGrupo.setBounds(350, 500, 140, 50);
 
         jLabel4.setText("TITULO DO GRUPO");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(60, 30, 430, 30);
+        jLabel4.setBounds(60, 80, 430, 30);
 
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -103,7 +104,7 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane5.setViewportView(txtNomeGrupo);
 
         getContentPane().add(jScrollPane5);
-        jScrollPane5.setBounds(60, 60, 430, 20);
+        jScrollPane5.setBounds(60, 110, 430, 20);
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -113,11 +114,17 @@ public class criargrupo extends javax.swing.JFrame {
         jScrollPane4.setViewportView(txtTag);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(60, 130, 430, 30);
+        jScrollPane4.setBounds(60, 180, 430, 30);
 
         jLabel3.setText("DEFINA A TAG DO SEU GRUPO");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 100, 430, 30);
+        jLabel3.setBounds(60, 150, 430, 30);
+
+        txtNomeGrupo2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtNomeGrupo2.setText("CRIAÇÃO DE GRUPO");
+        txtNomeGrupo2.setToolTipText("");
+        getContentPane().add(txtNomeGrupo2);
+        txtNomeGrupo2.setBounds(60, 0, 510, 80);
 
         pack();
         setLocationRelativeTo(null);
@@ -185,6 +192,7 @@ public class criargrupo extends javax.swing.JFrame {
     private javax.swing.JTextArea txtContato;
     private javax.swing.JTextArea txtDescricao;
     private javax.swing.JTextArea txtNomeGrupo;
+    private javax.swing.JLabel txtNomeGrupo2;
     private javax.swing.JTextArea txtTag;
     // End of variables declaration//GEN-END:variables
 
