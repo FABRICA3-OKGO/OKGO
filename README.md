@@ -1,7 +1,7 @@
 # OKGO
 Crie partys de forma simples e rapida
-## Versão: ALFA - 1.0 
-## Status do Projeto: ⚠️ Espera
+## Versão: 2.0 
+## Status do Projeto: A Fazer
 
 ## Tópicos
 🔹 [Descrição do projeto](https://github.com/FABRICA3-OKGO/OKGO/edit/main/README.md#descri%C3%A7%C3%A3o-do-projeto)
@@ -48,7 +48,9 @@ EM DESENVOLVIMENTO.
 
 ## Pré-requisitos ⚠️    
 JAVA 8; 
-WINDOWS 8 ou Superior; 
+WINDOWS 8 ou Superior;
+MySQL;
+Conexão com Internet; 
 
 ## Como rodar a aplicação 
 EM DESENVOLVIMENTO
@@ -66,15 +68,23 @@ https://github.com/JFormDesigner/FlatLaf
 
 ## Novos Recursos
 
-EM DESENVOLVIMENTO
+Alteração de Senha
+Excluir Conta
 
 ## Resolvendo Problemas 
 
-EM DESENVOLVIMENTO
+Exibição de Grupos na tela Inicial
+Visualizar Detalhes do Grupo
+Entrar no Grupo
+Visualizar como Membro
+Gerir Grupo
 
 ## Recursos inseridos 🧰
 
-EM DESENVOLVIMENTO
+Criar Cadastro
+Acessar Cadastro
+Editar Cadastro
+Criar Grupo
 
 ![image](https://user-images.githubusercontent.com/68714869/230674651-ac56638e-39fa-49be-9f9e-0be217c89fa8.png)
 
