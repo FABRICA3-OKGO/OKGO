@@ -4,6 +4,9 @@
  */
 package telas;
 
+import javax.swing.JFrame;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author Alves
@@ -16,6 +19,8 @@ public class Inicio2 extends javax.swing.JFrame {
     public Inicio2() {
         initComponents();
     }
+    
+    GrupoDetalhes telaInfo = new GrupoDetalhes();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -150,43 +155,24 @@ public class Inicio2 extends javax.swing.JFrame {
         txtNomeGrupo1.setText("GRUPOS MAIS RECENTES");
         txtNomeGrupo1.setToolTipText("");
 
-        jTable2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTable2.setAutoCreateRowSorter(true);
+        jTable2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {"1", "teste#1", "grupo de mentira", "mentiroso"},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "TAG", "Nome", "Criador"
+                "Id", "TAG", "Nome", "Criador"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jTable2.setColumnSelectionAllowed(true);
-        jTable2.setEnabled(false);
         jTable2.setFillsViewportHeight(true);
         jTable2.setFocusCycleRoot(true);
+        jTable2.setRowHeight(23);
+        jTable2.setShowGrid(false);
+        jTable2.setShowVerticalLines(true);
         jTable2.getTableHeader().setReorderingAllowed(false);
         jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -197,8 +183,7 @@ public class Inicio2 extends javax.swing.JFrame {
         jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
             jTable2.getColumnModel().getColumn(0).setResizable(false);
-            jTable2.getColumnModel().getColumn(1).setResizable(false);
-            jTable2.getColumnModel().getColumn(2).setResizable(false);
+            jTable2.getColumnModel().getColumn(0).setPreferredWidth(7);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -274,7 +259,32 @@ public class Inicio2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
-        // TODO add your handling code here:
+        //adicionar teste pra ver se é membro antes!!!     
+        //clicar na tabela e ela levar a outra pagina!!
+        int index = jTable2.getSelectedRow();
+        TableModel model = jTable2.getModel();
+        
+        int id = Integer.valueOf(model.getValueAt(index, 0).toString());
+        //pega o id do grupo selecionado
+        
+        //teste pra ver se é membro, criador, ou visitante
+        //bla
+        
+        //tela de visitante        
+        String tag = model.getValueAt(index, 1).toString();
+        String nome = model.getValueAt(index, 2).toString();
+        String criador = model.getValueAt(index, 3).toString();
+        
+        telaInfo.setVisible(true);
+        telaInfo.pack();
+        telaInfo.setLocationRelativeTo(null);
+        telaInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        telaInfo.txtNomeGrupo.setText(nome);
+        telaInfo.jTextTag.setText(tag);
+        telaInfo.jLabelCriador.setText(criador);    
+        
+       
     }//GEN-LAST:event_jTable2MouseClicked
 
     /**

@@ -96,7 +96,7 @@ public class MembroGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(80, 490, 120, 40);
+        jButton4.setBounds(60, 490, 70, 40);
 
         jButton5.setText("Avaliar Membro");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +105,7 @@ public class MembroGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(210, 490, 120, 40);
+        jButton5.setBounds(140, 490, 115, 40);
 
         jButton3.setText("Sair do Grupo");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +114,7 @@ public class MembroGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(340, 490, 120, 40);
+        jButton3.setBounds(260, 490, 110, 40);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -138,7 +138,7 @@ public class MembroGrupo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(390, 100, 180, 380);
+        jScrollPane1.setBounds(400, 90, 180, 380);
 
         txtNomeGrupo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtNomeGrupo.setText("PLACEHOLDER");

@@ -33,18 +33,20 @@ public class GrupoDetalhes extends javax.swing.JFrame {
         jTextArea3 = new javax.swing.JTextArea();
         jButton3 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextDescricao = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTextContato = new javax.swing.JTextArea();
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
+        jTableMembros = new javax.swing.JTable();
+        jLabelCriador = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        jTextTag = new javax.swing.JTextArea();
         txtNomeGrupo = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel3.setText("TAG");
 
@@ -59,52 +61,52 @@ public class GrupoDetalhes extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(610, 600));
         getContentPane().setLayout(null);
 
-        jButton3.setText("VOLTAR");
+        jButton3.setText("Voltar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(80, 460, 130, 50);
+        jButton3.setBounds(80, 460, 110, 30);
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        jTextDescricao.setEditable(false);
+        jTextDescricao.setColumns(20);
+        jTextDescricao.setRows(5);
+        jScrollPane2.setViewportView(jTextDescricao);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(80, 230, 300, 110);
+        jScrollPane2.setBounds(60, 230, 300, 110);
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane3.setViewportView(jTextArea2);
+        jTextContato.setEditable(false);
+        jTextContato.setColumns(20);
+        jTextContato.setRows(5);
+        jScrollPane3.setViewportView(jTextContato);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(80, 380, 300, 60);
+        jScrollPane3.setBounds(60, 380, 300, 60);
 
-        jButton4.setText("PARTICIPAR");
+        jButton4.setText("Participar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(240, 460, 140, 50);
+        jButton4.setBounds(230, 460, 110, 30);
 
         jLabel1.setText("DESCRIÇÃO DO GRUPO");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(80, 200, 300, 30);
+        jLabel1.setBounds(60, 200, 300, 30);
 
         jLabel2.setText("CONTATO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(80, 350, 300, 30);
+        jLabel2.setBounds(60, 350, 300, 30);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableMembros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -123,35 +125,44 @@ public class GrupoDetalhes extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(jTableMembros);
+        if (jTableMembros.getColumnModel().getColumnCount() > 0) {
+            jTableMembros.getColumnModel().getColumn(0).setResizable(false);
+            jTableMembros.getColumnModel().getColumn(1).setResizable(false);
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(390, 120, 180, 390);
+        jScrollPane1.setBounds(400, 90, 180, 380);
 
-        jLabel4.setText("TAG");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(80, 120, 300, 30);
+        jLabelCriador.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabelCriador.setText("nomeAqui");
+        getContentPane().add(jLabelCriador);
+        jLabelCriador.setBounds(470, 60, 140, 30);
 
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea4.setEditable(false);
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane5.setViewportView(jTextArea4);
+        jTextTag.setEditable(false);
+        jTextTag.setColumns(20);
+        jTextTag.setRows(5);
+        jScrollPane5.setViewportView(jTextTag);
 
         getContentPane().add(jScrollPane5);
-        jScrollPane5.setBounds(80, 150, 300, 30);
+        jScrollPane5.setBounds(60, 150, 300, 30);
 
         txtNomeGrupo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtNomeGrupo.setText("PLACEHOLDER");
         txtNomeGrupo.setToolTipText("");
         getContentPane().add(txtNomeGrupo);
-        txtNomeGrupo.setBounds(60, 20, 510, 80);
+        txtNomeGrupo.setBounds(60, 20, 300, 80);
+
+        jLabel5.setText("TAG");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(60, 120, 300, 30);
+
+        jLabel6.setText("Criado por:");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(400, 60, 70, 30);
 
         pack();
         setLocationRelativeTo(null);
@@ -214,17 +225,19 @@ public class GrupoDetalhes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabelCriador;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    public javax.swing.JTable jTableMembros;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JLabel txtNomeGrupo;
+    public javax.swing.JTextArea jTextContato;
+    public javax.swing.JTextArea jTextDescricao;
+    public javax.swing.JTextArea jTextTag;
+    public javax.swing.JLabel txtNomeGrupo;
     // End of variables declaration//GEN-END:variables
 }

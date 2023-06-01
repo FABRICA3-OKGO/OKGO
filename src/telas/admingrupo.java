@@ -37,6 +37,7 @@ public class AdminGrupo extends javax.swing.JFrame {
         jTextArea3 = new javax.swing.JTextArea();
         jButton5 = new javax.swing.JButton();
         txtNomeGrupo = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(650, 600));
@@ -49,7 +50,7 @@ public class AdminGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(340, 490, 120, 40);
+        jButton3.setBounds(400, 490, 110, 40);
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -78,7 +79,7 @@ public class AdminGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(80, 490, 120, 40);
+        jButton4.setBounds(140, 490, 120, 40);
 
         jLabel1.setText("DESCRIÇÃO DO GRUPO");
         getContentPane().add(jLabel1);
@@ -110,7 +111,7 @@ public class AdminGrupo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(390, 90, 180, 380);
+        jScrollPane1.setBounds(400, 90, 180, 380);
 
         jLabel3.setText("TAG");
         getContentPane().add(jLabel3);
@@ -134,13 +135,22 @@ public class AdminGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(210, 490, 120, 40);
+        jButton5.setBounds(280, 490, 114, 40);
 
         txtNomeGrupo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtNomeGrupo.setText("PLACEHOLDER");
         txtNomeGrupo.setToolTipText("");
         getContentPane().add(txtNomeGrupo);
         txtNomeGrupo.setBounds(60, 20, 510, 80);
+
+        jButton6.setText("Voltar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6);
+        jButton6.setBounds(60, 490, 70, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -156,6 +166,10 @@ public class AdminGrupo extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,6 +213,7 @@ public class AdminGrupo extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
