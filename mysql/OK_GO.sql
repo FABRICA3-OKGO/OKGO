@@ -138,3 +138,4 @@ left join grupos as gru
 on id_grupo = gru.id
 left join usuarios as usu
 on id_membro = usu.id;		
+

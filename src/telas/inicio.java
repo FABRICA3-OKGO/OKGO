@@ -7,6 +7,7 @@ package telas;
 import DAO.grupoDAO;
 import DTO.grupo;
 import javax.swing.JFrame;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -26,6 +27,11 @@ public class Inicio extends javax.swing.JFrame {
         jTable2.setRowSorter(new TableRowSorter(modelo));
         
         readJTable();
+        jTable2.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        jTable2.getColumnModel().getColumn(0).setPreferredWidth(45);
+        jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
+        jTable2.getColumnModel().getColumn(2).setPreferredWidth(300);
+        jTable2.getColumnModel().getColumn(3).setPreferredWidth(140);
         
     }
     
@@ -36,6 +42,7 @@ public class Inicio extends javax.swing.JFrame {
         for(grupo g: gdao.GruposInicio()){
         
             modelo.addRow(new Object[]{
+                
                 g.getId(),
                 g.getTag(),
                 g.getNome(),
@@ -191,7 +198,7 @@ public class Inicio extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "TAG", "Nome", "Criador"
+                "IDs", "TAG", "Nome", "Criador"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -217,7 +224,11 @@ public class Inicio extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable2);
         jTable2.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setResizable(false);
             jTable2.getColumnModel().getColumn(0).setPreferredWidth(7);
+            jTable2.getColumnModel().getColumn(1).setResizable(false);
+            jTable2.getColumnModel().getColumn(2).setResizable(false);
+            jTable2.getColumnModel().getColumn(3).setResizable(false);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
