@@ -92,6 +92,8 @@ Gerir Grupo
 
 View Tela Adm do Grupo
 
+Dar Nota a Usuários
+
 ## Recursos inseridos 🧰
 
 Criar Cadastro
