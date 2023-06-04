@@ -47,6 +47,8 @@ public class GrupoDetalhes extends javax.swing.JFrame {
         txtNomeGrupo = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabelId = new javax.swing.JLabel();
 
         jLabel3.setText("TAG");
 
@@ -164,13 +166,22 @@ public class GrupoDetalhes extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(400, 60, 70, 30);
 
+        jLabel7.setText("Grupod ID:");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(20, 90, 70, 30);
+
+        jLabelId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabelId.setText("IDAqui");
+        getContentPane().add(jLabelId);
+        jLabelId.setBounds(90, 90, 140, 30);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        telas.Inicio telaInicio = new Inicio();
+        telas.InicioOld telaInicio = new InicioOld();
                             telaInicio.setVisible(true);
                             dispose();                                
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -227,7 +238,9 @@ public class GrupoDetalhes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabelCriador;
+    public javax.swing.JLabel jLabelId;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

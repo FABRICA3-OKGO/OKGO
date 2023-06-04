@@ -205,7 +205,7 @@ public class Perfil extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         Validar();
-        telas.Inicio telaInicio = new Inicio();
+        telas.InicioOld telaInicio = new InicioOld();
                             telaInicio.setVisible(true);
                             dispose();
         
@@ -213,7 +213,7 @@ public class Perfil extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        telas.Inicio telaInicio = new Inicio();
+        telas.InicioOld telaInicio = new InicioOld();
                             telaInicio.setVisible(true);
                             dispose();                                
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -243,7 +243,7 @@ public class Perfil extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        telas.Inicio telaInicio = new Inicio();
+        telas.InicioOld telaInicio = new InicioOld();
                             telaInicio.setVisible(true);
                             dispose(); 
     }//GEN-LAST:event_jLabel5MouseClicked

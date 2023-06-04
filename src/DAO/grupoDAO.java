@@ -47,7 +47,7 @@ public class grupoDAO {
         try {
             String sql = "SELECT gru.nome, tag, gru.id, usu.username AS criador"
                     + " FROM grupos AS gru LEFT JOIN usuarios as usu on"
-                    + " gru.criador_id = usu.id ORDER by id;";
+                    + " gru.criador_id = usu.id ORDER by id DESC;";
             PreparedStatement pstm = conn.prepareStatement(sql);            
             rs = pstm.executeQuery();
             

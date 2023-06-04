@@ -41,6 +41,8 @@ public class MembroGrupo extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         txtNomeGrupo = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabelCriador = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(610, 600));
@@ -146,6 +148,15 @@ public class MembroGrupo extends javax.swing.JFrame {
         getContentPane().add(txtNomeGrupo);
         txtNomeGrupo.setBounds(60, 20, 510, 80);
 
+        jLabel6.setText("Criado por:");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(400, 60, 70, 30);
+
+        jLabelCriador.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabelCriador.setText("nomeAqui");
+        getContentPane().add(jLabelCriador);
+        jLabelCriador.setBounds(470, 60, 140, 30);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -206,6 +217,8 @@ public class MembroGrupo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabelCriador;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

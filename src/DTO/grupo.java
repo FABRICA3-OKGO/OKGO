@@ -5,12 +5,12 @@ package DTO;
  * @author cassi
  */
 public class grupo {
-    int id;
-    int criadorId;
-    String tag;
-    String nome;
-    String descricao;
-    String contato;
+    int id;//
+    int criadorId;//
+    String tag;//
+    String nome;//
+    String descricao;//
+    String contato;//
     String dataCriacao;
     String Criador;
 
