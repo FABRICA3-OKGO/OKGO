@@ -136,7 +136,7 @@ public class CriarGrupo extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        telas.InicioOld telaInicio = new InicioOld();
+        telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -210,7 +210,7 @@ public class CriarGrupo extends javax.swing.JFrame {
         } else {
             System.out.println("Informações de Grupo preenchidas corretamente.");
             criarGrupo(txtNomeGrupo.getText(), txtTag.getText(), txtDescricao.getText(), txtContato.getText());
-            telas.InicioOld telaInicio = new InicioOld();
+            telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();
         }

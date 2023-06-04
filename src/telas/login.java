@@ -138,7 +138,7 @@ public class Login extends javax.swing.JFrame {
             
             if (rsusuariodao.next()) {
                 this.id = rsusuariodao.getObject("id", int.class);
-                telas.InicioOld telaInicio = new InicioOld();
+                telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();
             }else{

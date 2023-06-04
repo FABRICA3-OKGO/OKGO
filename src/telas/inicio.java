@@ -151,11 +151,16 @@ public class Inicio extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(30, 510, 24, 24);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt (1).png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 410, 24, 24);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa (1).png"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -267,10 +272,7 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-        telas.InicioOld telaInicio = new InicioOld();
-        telaInicio.setVisible(true);
-        dispose();
+
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -315,6 +317,12 @@ public class Inicio extends javax.swing.JFrame {
         
        
     }//GEN-LAST:event_jTable2MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        telas.MeusGrupos telaGruposUsuario = new MeusGrupos();
+                            telaGruposUsuario.setVisible(true);
+                            dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
