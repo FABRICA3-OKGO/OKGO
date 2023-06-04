@@ -80,7 +80,7 @@ insert into avaliacoes (usuario_id, nota) values
 (2, 5), (2, 4), (2, 5);
 
 insert into grupos (tag, nome, descricao, criador_id, contato) values
-("D&D", "Mesa de RPG D&D", "RPG com os amigos", 2, "discord.gg/rpg" );
+("RPG", "Mesa de RPG D&D", "D&D com os amigos", 2, "discord.gg/rpg" );
  
 insert into membros (id_grupo, id_membro) values
  (1, 1);

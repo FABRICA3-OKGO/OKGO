@@ -16,17 +16,17 @@ import javax.swing.table.TableRowSorter;
  *
  * @author cassi
  */
-public class Inicio extends javax.swing.JFrame {
+public class Pesquisa extends javax.swing.JFrame {
 
     /**
      * Creates new form login
      */
-    public Inicio() {
+    public Pesquisa(String tag) {
         initComponents();
         DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
         jTable2.setRowSorter(new TableRowSorter(modelo));
         
-        readJTable();
+        readJTable(tag);
         jTable2.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         jTable2.getColumnModel().getColumn(0).setPreferredWidth(45);
         jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
@@ -35,11 +35,11 @@ public class Inicio extends javax.swing.JFrame {
         
     }
     
-    public void readJTable(){
+    public void readJTable(String tag){
         DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
         modelo.setNumRows(0);        
         grupoDAO gdao = new grupoDAO();
-        for(grupo g: gdao.GruposInicio()){
+        for(grupo g: gdao.Pesquisar(tag)){
         
             modelo.addRow(new Object[]{
                 
@@ -167,7 +167,7 @@ public class Inicio extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 410, 24, 24);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa (1).png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa.png"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -193,7 +193,7 @@ public class Inicio extends javax.swing.JFrame {
         });
 
         txtNomeGrupo1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtNomeGrupo1.setText("GRUPOS MAIS RECENTES");
+        txtNomeGrupo1.setText("GRUPOS CORRESPONDENTES");
         txtNomeGrupo1.setToolTipText("");
 
         jTable2.setAutoCreateRowSorter(true);
@@ -214,7 +214,6 @@ public class Inicio extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setAutoscrolls(false);
         jTable2.setColumnSelectionAllowed(true);
         jTable2.setFillsViewportHeight(true);
         jTable2.setFocusCycleRoot(true);
@@ -289,7 +288,9 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-
+        telas.Inicio telaInicio = new Inicio();
+        telaInicio.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -342,10 +343,9 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabelLupaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLupaMouseClicked
-        // TODO add your handling code here:
         telas.Pesquisa telaPesquisa = new Pesquisa(jTextPesquisa.getText());
                             telaPesquisa.setVisible(true);
-                                    dispose();                      
+                                    dispose();   
     }//GEN-LAST:event_jLabelLupaMouseClicked
 
     /**
@@ -365,14 +365,110 @@ public class Inicio extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pesquisa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pesquisa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pesquisa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pesquisa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -407,11 +503,11 @@ public class Inicio extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Inicio().setVisible(true);
-            }
-        });
+        //java.awt.EventQueue.invokeLater(new Runnable() {
+        //    public void run() {
+        //  A      new Pesquisa(String).setVisible(true);
+        //    }
+        //});
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

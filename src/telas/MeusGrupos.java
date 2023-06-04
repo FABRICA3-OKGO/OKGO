@@ -31,7 +31,7 @@ public class MeusGrupos extends javax.swing.JFrame {
         jTable2.getColumnModel().getColumn(0).setPreferredWidth(45);
         jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
         jTable2.getColumnModel().getColumn(2).setPreferredWidth(300);
-        jTable2.getColumnModel().getColumn(3).setPreferredWidth(140);
+        jTable2.getColumnModel().getColumn(3).setPreferredWidth(138);
         
     }
     
@@ -88,8 +88,8 @@ public class MeusGrupos extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
-        jLabel2 = new javax.swing.JLabel();
+        jTextPesquisa = new javax.swing.JTextPane();
+        jLabelLupa = new javax.swing.JLabel();
         txtNomeGrupo1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -158,7 +158,7 @@ public class MeusGrupos extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(30, 510, 24, 24);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt (1).png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -167,7 +167,7 @@ public class MeusGrupos extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 410, 24, 24);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa (1).png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa.png"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -183,9 +183,14 @@ public class MeusGrupos extends javax.swing.JFrame {
         jPanel1.setRequestFocusEnabled(false);
         jPanel1.setVerifyInputWhenFocusTarget(false);
 
-        jScrollPane2.setViewportView(jTextPane2);
+        jScrollPane2.setViewportView(jTextPesquisa);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/procurar.png"))); // NOI18N
+        jLabelLupa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/procurar.png"))); // NOI18N
+        jLabelLupa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelLupaMouseClicked(evt);
+            }
+        });
 
         txtNomeGrupo1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtNomeGrupo1.setText("SEUS GRUPOS");
@@ -239,7 +244,7 @@ public class MeusGrupos extends javax.swing.JFrame {
                 .addContainerGap(80, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelLupa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
@@ -253,7 +258,7 @@ public class MeusGrupos extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(jLabelLupa, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                     .addComponent(jScrollPane2))
                 .addGap(12, 12, 12)
                 .addComponent(txtNomeGrupo1)
@@ -283,7 +288,9 @@ public class MeusGrupos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-
+        telas.Inicio telaInicio = new Inicio();
+        telaInicio.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -330,10 +337,15 @@ public class MeusGrupos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        telas.MeusGrupos telaGruposUsuario = new MeusGrupos();
-                            telaGruposUsuario.setVisible(true);
-                            dispose();
+   
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabelLupaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelLupaMouseClicked
+        // TODO add your handling code here:
+        telas.Pesquisa telaPesquisa = new Pesquisa(jTextPesquisa.getText());
+                            telaPesquisa.setVisible(true);
+                                    dispose(); 
+    }//GEN-LAST:event_jLabelLupaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -438,9 +450,9 @@ public class MeusGrupos extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabelLupa;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
@@ -458,7 +470,7 @@ public class MeusGrupos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JTextPane jTextPesquisa;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.MenuBar menuBar1;

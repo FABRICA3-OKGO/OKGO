@@ -6,7 +6,7 @@ package telas;
 
 /**
  *
- * @author Alves
+ * @author cassi
  */
 public class MembroGrupo extends javax.swing.JFrame {
 
@@ -43,6 +43,8 @@ public class MembroGrupo extends javax.swing.JFrame {
         txtNomeGrupo = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabelCriador = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabelId = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(610, 600));
@@ -107,7 +109,7 @@ public class MembroGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(140, 490, 115, 40);
+        jButton5.setBounds(140, 490, 114, 40);
 
         jButton3.setText("Sair do Grupo");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -156,6 +158,15 @@ public class MembroGrupo extends javax.swing.JFrame {
         jLabelCriador.setText("nomeAqui");
         getContentPane().add(jLabelCriador);
         jLabelCriador.setBounds(470, 60, 140, 30);
+
+        jLabel7.setText("Grupod ID:");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(60, 80, 70, 30);
+
+        jLabelId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabelId.setText("IDAqui");
+        getContentPane().add(jLabelId);
+        jLabelId.setBounds(130, 80, 140, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -218,7 +229,9 @@ public class MembroGrupo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabelCriador;
+    public javax.swing.JLabel jLabelId;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

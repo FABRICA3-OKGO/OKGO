@@ -2,7 +2,7 @@ package telas;
 
 /**
  *
- * @author Alves
+ * @author cassi
  */
 public class AdminGrupo extends javax.swing.JFrame {
 
@@ -40,6 +40,8 @@ public class AdminGrupo extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabelCriador = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabelId = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(650, 600));
@@ -163,6 +165,15 @@ public class AdminGrupo extends javax.swing.JFrame {
         getContentPane().add(jLabelCriador);
         jLabelCriador.setBounds(470, 60, 140, 30);
 
+        jLabel7.setText("Grupod ID:");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(60, 70, 70, 30);
+
+        jLabelId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabelId.setText("IDAqui");
+        getContentPane().add(jLabelId);
+        jLabelId.setBounds(130, 70, 140, 30);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -229,7 +240,9 @@ public class AdminGrupo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabelCriador;
+    public javax.swing.JLabel jLabelId;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

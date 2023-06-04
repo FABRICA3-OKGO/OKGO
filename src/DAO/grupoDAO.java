@@ -104,5 +104,41 @@ public class grupoDAO {
         return grupos;
     }
     
+    public List<grupo> Pesquisar(String tag){
+        Connection conn; 
+        conn = new sql().conectaBD();
+        
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<grupo> grupos = new ArrayList<>();
+                
+        try {
+            String sql = "SELECT gru.nome, tag, gru.id, usu.username AS criador"
+                    + " FROM grupos AS gru LEFT JOIN usuarios as usu on"
+                    + " gru.criador_id = usu.id"
+                    + " LEFT JOIN membros as mem"
+                    + " on id_grupo = gru.id"
+                    + " where tag = '" + tag 
+                    + "' ORDER by id DESC;";
+            PreparedStatement pstm = conn.prepareStatement(sql);            
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+                grupo grupo = new grupo();
+                grupo.setId(rs.getInt("id"));
+                grupo.setNome(rs.getString("nome"));
+                grupo.setTag(rs.getString("tag"));
+                grupo.setCriador(rs.getString("criador"));
+                grupos.add(grupo);
+            }
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Não foi possivel recuperar informações dos grupos mais recentes: " + erro,
+                    "database errror" , 2);
+        }
+        return grupos;
+    }
+    
   
 }
