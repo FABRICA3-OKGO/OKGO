@@ -68,17 +68,17 @@ https://github.com/JFormDesigner/FlatLaf
 
 ## Novos Recursos
 
-Alteração de Senha
-
-Excluir Conta
-
-## Resolvendo Problemas 
-
-Exibição de Grupos na tela Inicial
+Exibição de Grupos nas tela Inicial
 
 View Tela Inicial
 
+Exivição de Grupos na tela de Meus Grupos
+
+View Tela Meus Grupos
+
 Visualizar Detalhes do Grupo
+
+## Resolvendo Problemas 
 
 View Tela do Grupo
 
@@ -109,6 +109,10 @@ View de Perfil
 Criar Grupo
 
 View de Criação de Grupo
+
+Alteração de Senha
+
+Excluir Conta
 
 ![image](https://user-images.githubusercontent.com/68714869/230674651-ac56638e-39fa-49be-9f9e-0be217c89fa8.png)
 
