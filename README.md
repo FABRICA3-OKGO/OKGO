@@ -78,9 +78,13 @@ View Tela Meus Grupos
 
 Visualizar Detalhes do Grupo
 
+Pesquisa Por Grupos
+
+View de Pesquisa Por Grupos
+
 ## Resolvendo Problemas 
 
-View Tela do Grupo
+View de Detalhes do Grupo como Visitante
 
 Entrar no Grupo
 
