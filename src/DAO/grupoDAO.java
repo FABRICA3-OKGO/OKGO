@@ -207,6 +207,39 @@ public class grupoDAO {
         connect.disconnect();
     }
     
+    public void SairGrupo(String grupoId){
+        sql connect = new sql();
+        connect.connect();
+        String query ="DELETE from membros WHERE id_grupo =" + grupoId +
+                 " and id_membro =" + Login.id + ";";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Não foi possível sair do grupo.","Erro ao sair do grupo.",2);
+            connect.disconnect();
+        }else{
+            JOptionPane.showMessageDialog(null, "Você saiu do grupo com sucesso.", "Sucesso.",1);}
+        connect.disconnect();
+    }
+    
+    public void ApagarGrupo(String grupoId){
+        sql connect = new sql();
+        connect.connect();
+        String query = "DELETE from membros WHERE id_grupo = " + grupoId + ";";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Erro 01 ao apagar grupo.","Erro ao apagar grupo.",2);
+            connect.disconnect();}
+        else{
+            String query2 = "DELETE from grupos WHERE id = " + grupoId + ";";
+            if (connect.insertSQL(query2) == 0) {
+                JOptionPane.showMessageDialog(null, "Erro 02 ao apagar grupo.","Erro ao apagar grupo.",2);
+                connect.disconnect();}
+            else{
+                JOptionPane.showMessageDialog(null, "Grupo apagado com sucesso.", "Grupo Apagado.",1);
+                connect.disconnect();
+            } 
+        }   
+    }    
+    
+    
     public void criarGrupo(String nome, String tag, String descricao, String contato){
         sql connect = new sql();
         connect.connect();

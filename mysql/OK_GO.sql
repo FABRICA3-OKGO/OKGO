@@ -105,7 +105,8 @@ FROM
 ##SELECT gru.nome, tag, gru.id, usu.username AS criador FROM grupos AS gru LEFT JOIN usuarios as usu on gru.criador_id = usu.id ORDER by id;
 
 ##MEMBROS
-select 
+select
+	gru.id,
 	gru.nome,
     usu.id,
 	usu.username
@@ -114,6 +115,9 @@ left join grupos as gru
 on id_grupo = gru.id
 left join usuarios as usu
 on id_membro = usu.id;
+
+#Delete from membros where id_grupo = 1;
+#Delete from grupos where id =1;
 
 
 		

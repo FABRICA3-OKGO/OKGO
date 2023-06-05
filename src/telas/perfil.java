@@ -254,9 +254,7 @@ public class Perfil extends javax.swing.JFrame {
                 dispose();                   
         }else //Confirmar
             ChamarApagar(); 
-            telas.Login telaLogin = new Login();
-                            telaLogin.setVisible(true);
-                            dispose();
+            dispose();
      
     
     }//GEN-LAST:event_btnApagarContaActionPerformed

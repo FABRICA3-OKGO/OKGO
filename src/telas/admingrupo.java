@@ -1,5 +1,8 @@
 package telas;
 
+import DAO.grupoDAO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author cassi
@@ -22,12 +25,11 @@ public class AdminGrupo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
+        jButtonApagarGrupo = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextDescricao = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextContato = new javax.swing.JTextArea();
-        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -42,19 +44,20 @@ public class AdminGrupo extends javax.swing.JFrame {
         jLabelCriador = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabelId = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(650, 600));
         getContentPane().setLayout(null);
 
-        jButton3.setText("Apagar Grupo");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonApagarGrupo.setText("Apagar Grupo");
+        jButtonApagarGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonApagarGrupoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(400, 490, 110, 40);
+        getContentPane().add(jButtonApagarGrupo);
+        jButtonApagarGrupo.setBounds(270, 490, 110, 40);
 
         jTextDescricao.setEditable(false);
         jTextDescricao.setColumns(20);
@@ -76,15 +79,6 @@ public class AdminGrupo extends javax.swing.JFrame {
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(60, 380, 300, 60);
 
-        jButton4.setText("Avaliar Membro");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(140, 490, 120, 40);
-
         jLabel1.setText("DESCRIÇÃO DO GRUPO");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(60, 200, 300, 30);
@@ -101,18 +95,14 @@ public class AdminGrupo extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "INTEGRANTES", "NOTA DO USER"
+                "Membros", "Nota Média"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(400, 90, 180, 380);
@@ -139,7 +129,7 @@ public class AdminGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(280, 490, 114, 40);
+        jButton5.setBounds(150, 490, 114, 40);
 
         txtNomeGrupo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtNomeGrupo.setText("PLACEHOLDER");
@@ -174,16 +164,24 @@ public class AdminGrupo extends javax.swing.JFrame {
         getContentPane().add(jLabelId);
         jLabelId.setBounds(130, 70, 140, 30);
 
+        jLabel5.setText("<html><i> Selecione um membro na tabela para avalia-lo.");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(420, 450, 140, 70);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonApagarGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonApagarGrupoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        Object[] options = { "Cancelar", "Confirmar" };
+        int escolha = (JOptionPane.showOptionDialog(null, "Tem certeza que deseja APAGAR esse grupo? A exclusão é permanente.", "Apagar Grupo?",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]));
+        System.out.println(escolha);
+        if (escolha == 0) { //Cancelar
+            //dispose();                   
+        }else{ //Confirmar
+            ChamarApagarGrupo(); }
+    }//GEN-LAST:event_jButtonApagarGrupoActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -234,13 +232,13 @@ public class AdminGrupo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButtonApagarGrupo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabelCriador;
@@ -255,4 +253,13 @@ public class AdminGrupo extends javax.swing.JFrame {
     public javax.swing.JTextArea jTextTag;
     public javax.swing.JLabel txtNomeGrupo;
     // End of variables declaration//GEN-END:variables
+    public void ChamarApagarGrupo(){
+        String grupoId = jLabelId.getText();
+        grupoDAO grupo = new grupoDAO();
+        grupo.ApagarGrupo(grupoId);
+        MeusGrupos telaMeusGrupos = new MeusGrupos();
+                            telaMeusGrupos.setVisible(true);
+                            dispose();  
+    }
 }
+

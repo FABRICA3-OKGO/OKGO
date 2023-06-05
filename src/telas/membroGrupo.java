@@ -1,5 +1,8 @@
 package telas;
 
+import DAO.grupoDAO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author cassi
@@ -22,6 +25,7 @@ public class MembroGrupo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextTag = new javax.swing.JTextArea();
@@ -32,7 +36,6 @@ public class MembroGrupo extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextContato = new javax.swing.JTextArea();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -41,6 +44,9 @@ public class MembroGrupo extends javax.swing.JFrame {
         jLabelCriador = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabelId = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+
+        jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(610, 600));
@@ -96,16 +102,7 @@ public class MembroGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(60, 490, 70, 40);
-
-        jButton5.setText("Avaliar Membro");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(140, 490, 115, 40);
+        jButton4.setBounds(60, 490, 110, 40);
 
         jButton3.setText("Sair do Grupo");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +111,7 @@ public class MembroGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(260, 490, 110, 40);
+        jButton3.setBounds(250, 490, 110, 40);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -124,17 +121,9 @@ public class MembroGrupo extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "INTEGRANTES", "NOTA DO USER"
+                "Membros", "Nota Média"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
@@ -157,12 +146,16 @@ public class MembroGrupo extends javax.swing.JFrame {
 
         jLabel7.setText("Grupod ID:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(60, 80, 70, 30);
+        jLabel7.setBounds(60, 70, 70, 30);
 
         jLabelId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelId.setText("IDAqui");
         getContentPane().add(jLabelId);
-        jLabelId.setBounds(130, 80, 140, 30);
+        jLabelId.setBounds(130, 70, 140, 30);
+
+        jLabel5.setText("<html><i> Selecione um membro na tabela para avalia-lo.");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(420, 450, 160, 70);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,12 +166,16 @@ public class MembroGrupo extends javax.swing.JFrame {
                             dispose(); 
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        Object[] options = { "Cancelar", "Confirmar" };
+        int escolha = (JOptionPane.showOptionDialog(null, "Tem certeza que deseja sair do grupo?", "Sair do Grupo?",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]));
+        System.out.println(escolha);
+        if (escolha == 0) { //Cancelar
+            //dispose();                   
+        }else{ //Confirmar
+            ChamarSair(); }
+            
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -222,10 +219,11 @@ public class MembroGrupo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabelCriador;
@@ -240,4 +238,12 @@ public class MembroGrupo extends javax.swing.JFrame {
     public javax.swing.JTextArea jTextTag;
     public javax.swing.JLabel txtNomeGrupo;
     // End of variables declaration//GEN-END:variables
+    public void ChamarSair(){
+        String grupoId = jLabelId.getText();
+        grupoDAO grupo = new grupoDAO();
+        grupo.SairGrupo(grupoId);
+        MeusGrupos telaMeusGrupos = new MeusGrupos();
+                                telaMeusGrupos.setVisible(true);
+                                dispose();    
+    }
 }

@@ -84,26 +84,26 @@ public class usuarioDAO {
         connect.connect();
         String query = "DELETE from avaliacoes WHERE usuario_id = " + Login.id + ";";
             if (connect.insertSQL(query) == 0) {
-                JOptionPane.showMessageDialog(null, "Erro ao apagar seu cadastro.","Erro ao  cadastro.",2);
+                JOptionPane.showMessageDialog(null, "Erro ao apagar seu cadastro.","Erro ao apagar cadastro.",2);
                 connect.disconnect();}
             else{
                 String query2 = "DELETE from membros WHERE id_membro =" + Login.id + ";";
                 if (connect.insertSQL(query2) == 0) {
-                    JOptionPane.showMessageDialog(null, "Erro ao apagar seu cadastro.","Erro ao  cadastro.",2);
+                    JOptionPane.showMessageDialog(null, "Erro ao apagar seu cadastro.","Erro ao apagar cadastro.",2);
                     connect.disconnect();} 
                 else{
                     String query3 = " DELETE from grupos WHERE criador_id = " + Login.id + ";";
                     if (connect.insertSQL(query3) == 0) {
-                        JOptionPane.showMessageDialog(null, "Erro ao apagar seu cadastro.","Erro ao  cadastro.",2);
+                        JOptionPane.showMessageDialog(null, "Erro ao apagar seu cadastro.","Erro ao apagar cadastro.",2);
                         connect.disconnect();}
                     else{
                         String query4 = "DELETE from usuarios WHERE id = " + Login.id + ";";
                         if (connect.insertSQL(query4) == 0) {
-                            JOptionPane.showMessageDialog(null, "Erro ao apagar seu cadastro.","Erro ao  cadastro.",2);
+                            JOptionPane.showMessageDialog(null, "Erro ao apagar seu cadastro.","Erro ao apagar cadastro.",2);
                             connect.disconnect();}
                         else{
                             JOptionPane.showMessageDialog(null, "Conta Encerrada com sucesso.", "Cadastro Deletado.",1);
-                        connect.disconnect();} 
+                            connect.disconnect();} 
                         }                          
                 }    
             }
