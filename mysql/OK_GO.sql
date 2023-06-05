@@ -4,7 +4,7 @@ use OK_GO;
 
 CREATE TABLE usuarios (
   id 					INT 					NOT NULL 			AUTO_INCREMENT,
-  username				VARCHAR(30)				NOT NULL, 
+  username				VARCHAR(30)				NOT NULL			UNIQUE, 
   email 				VARCHAR(100) 			UNIQUE,
   nome  				VARCHAR(100) 			NOT NULL,
   senha 				VARCHAR(100) 			NOT NULL,
@@ -116,9 +116,14 @@ on id_grupo = gru.id
 left join usuarios as usu
 on id_membro = usu.id;
 
-#Delete from membros where id_grupo = 1;
-#Delete from grupos where id =1;
-
-
-		
-
+SELECT username, avg(nota)
+                     FROM membros AS mem 
+                     LEFT JOIN usuarios as usu on
+                      id_membro = usu.id
+                      LEFT JOIN grupos as gru on 
+                      id_grupo = gru.id 
+                      LEFT JOIN avaliacoes as ava on
+                      ava.usuario_id = usu.id
+                      where gru.id = 1
+                      group by usu.id
+                    ;

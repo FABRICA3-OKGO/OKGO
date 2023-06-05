@@ -7,6 +7,7 @@ package DTO;
 public class UsuarioDTO {
     
     private int id;
+    private double nota;
     private String username;
     private String nome;
     private String email;
@@ -20,6 +21,16 @@ public class UsuarioDTO {
     public void setId(int id) {
         this.id = id;
     }
+
+    public double getNota() {
+        return nota;
+    }
+
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+    
+    
 
     public String getUsername() {
         return username;

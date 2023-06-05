@@ -1,7 +1,9 @@
 package telas;
 
 import DAO.grupoDAO;
+import DTO.UsuarioDTO;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,8 +14,30 @@ public class AdminGrupo extends javax.swing.JFrame {
     /**
      * Creates new form admingrupo
      */
-    public AdminGrupo() {
+    public AdminGrupo(int idGrupo) {
         initComponents();
+        DefaultTableModel modelo = (DefaultTableModel) jTableMembros.getModel();
+        
+        readJTableMembros(idGrupo);
+    }
+    
+    private void readJTableMembros(int idGrupo){
+        DefaultTableModel modelo = (DefaultTableModel) jTableMembros.getModel();
+        modelo.setNumRows(0);
+        grupoDAO gdao = new grupoDAO();
+        for(UsuarioDTO m: gdao.PegarMembros(idGrupo)){
+            if (m.getNota()== 0.0) {
+                modelo.addRow(new Object[]{
+                m.getUsername(),
+                "NA"
+                });                
+            } else{
+            modelo.addRow(new Object[]{
+                m.getUsername(),
+                m.getNota()
+                });
+            }
+        }
     }
 
     /**
@@ -33,7 +57,7 @@ public class AdminGrupo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableMembros = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextTag = new javax.swing.JTextArea();
@@ -87,7 +111,7 @@ public class AdminGrupo extends javax.swing.JFrame {
         getContentPane().add(jLabel2);
         jLabel2.setBounds(60, 350, 300, 30);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableMembros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -98,10 +122,10 @@ public class AdminGrupo extends javax.swing.JFrame {
                 "Membros", "Nota Média"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
+        jScrollPane1.setViewportView(jTableMembros);
+        if (jTableMembros.getColumnModel().getColumnCount() > 0) {
+            jTableMembros.getColumnModel().getColumn(0).setResizable(false);
+            jTableMembros.getColumnModel().getColumn(1).setResizable(false);
         }
 
         getContentPane().add(jScrollPane1);
@@ -226,7 +250,6 @@ public class AdminGrupo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AdminGrupo().setVisible(true);
             }
         });
     }
@@ -247,7 +270,7 @@ public class AdminGrupo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableMembros;
     public javax.swing.JTextArea jTextContato;
     public javax.swing.JTextArea jTextDescricao;
     public javax.swing.JTextArea jTextTag;

@@ -51,8 +51,8 @@ public class Inicio extends javax.swing.JFrame {
     }
     
     GrupoDetalhes telaInfo = new GrupoDetalhes();
-    MembroGrupo telaMembro = new MembroGrupo();
-    AdminGrupo telaAdmin = new AdminGrupo();
+    //MembroGrupo telaMembro = new MembroGrupo();
+    //AdminGrupo telaAdmin = new AdminGrupo();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -300,7 +300,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+// TODO add your handling code here:
         telas.CriarGrupo telaCriarGrupo = new CriarGrupo();
         telaCriarGrupo.setVisible(true);
         dispose();
@@ -451,7 +451,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel txtNomeGrupo1;
     // End of variables declaration//GEN-END:variables
 public void Membro(int id, String nome, String tag, String criador, String descricao, String contato){
-    //tela de Membro - definindo os textos
+        MembroGrupo telaMembro = new MembroGrupo(id);
         telaMembro.jLabelId.setText(Integer.toString(id));
         telaMembro.txtNomeGrupo.setText(nome);
         telaMembro.jTextTag.setText(tag);
@@ -465,7 +465,7 @@ public void Membro(int id, String nome, String tag, String criador, String descr
         dispose();
 }
     public void Admin(int id, String nome, String tag, String criador, String descricao, String contato){
-    //tela de Membro - definindo os textos
+        AdminGrupo telaAdmin = new AdminGrupo(id);
         telaAdmin.jLabelId.setText(Integer.toString(id));
         telaAdmin.txtNomeGrupo.setText(nome);
         telaAdmin.jTextTag.setText(tag);
@@ -479,7 +479,7 @@ public void Membro(int id, String nome, String tag, String criador, String descr
         dispose();
 }
     public void Visitante(int id, String nome, String tag, String criador, String descricao){
-    //tela de Membro - definindo os textos
+    //tela de Visitante - definindo os textos
         telaInfo.jLabelId.setText(Integer.toString(id));
         telaInfo.txtNomeGrupo.setText(nome);
         telaInfo.jTextTag.setText(tag);

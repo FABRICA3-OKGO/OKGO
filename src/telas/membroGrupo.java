@@ -1,7 +1,9 @@
 package telas;
 
 import DAO.grupoDAO;
+import DTO.UsuarioDTO;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -12,8 +14,30 @@ public class MembroGrupo extends javax.swing.JFrame {
     /**
      * Creates new form participantegrupo
      */
-    public MembroGrupo() {
+    public MembroGrupo(int idGrupo) {
         initComponents();
+        DefaultTableModel modelo = (DefaultTableModel) jTableMembros.getModel();
+        
+        readJTableMembros(idGrupo);
+    }
+    
+    private void readJTableMembros(int idGrupo){
+        DefaultTableModel modelo = (DefaultTableModel) jTableMembros.getModel();
+        modelo.setNumRows(0);
+        grupoDAO gdao = new grupoDAO();
+        for(UsuarioDTO m: gdao.PegarMembros(idGrupo)){
+            if (m.getNota()== 0.0) {
+                modelo.addRow(new Object[]{
+                m.getUsername(),
+                "NA"
+                });                
+            } else{
+            modelo.addRow(new Object[]{
+                m.getUsername(),
+                m.getNota()
+                });
+            }
+        }
     }
 
     /**
@@ -38,7 +62,7 @@ public class MembroGrupo extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableMembros = new javax.swing.JTable();
         txtNomeGrupo = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabelCriador = new javax.swing.JLabel();
@@ -113,7 +137,7 @@ public class MembroGrupo extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(250, 490, 110, 40);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableMembros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -124,7 +148,7 @@ public class MembroGrupo extends javax.swing.JFrame {
                 "Membros", "Nota Média"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableMembros);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(400, 90, 180, 380);
@@ -211,7 +235,6 @@ public class MembroGrupo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MembroGrupo().setVisible(true);
             }
         });
     }
@@ -232,7 +255,7 @@ public class MembroGrupo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableMembros;
     public javax.swing.JTextArea jTextContato;
     public javax.swing.JTextArea jTextDescricao;
     public javax.swing.JTextArea jTextTag;

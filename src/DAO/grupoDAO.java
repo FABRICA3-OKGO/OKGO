@@ -2,6 +2,7 @@ package DAO;
 
 import DTO.grupo;
 import DAO.sql;
+import DTO.UsuarioDTO;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -103,7 +104,7 @@ public class grupoDAO {
         }
         return grupos;
     }
-    
+        
     public List<grupo> Pesquisar(String tag){
         Connection conn; 
         conn = new sql().conectaBD();
@@ -118,7 +119,7 @@ public class grupoDAO {
                     + " FROM grupos AS gru LEFT JOIN usuarios as usu on"
                     + " gru.criador_id = usu.id"
                     + " where tag = '" + tag 
-                    + "' ORDER by id DESC;";
+                    + "'group by id ORDER by id DESC;";
             PreparedStatement pstm = conn.prepareStatement(sql);            
             rs = pstm.executeQuery();
             
@@ -136,6 +137,43 @@ public class grupoDAO {
                     "database errror" , 2);
         }
         return grupos;
+    }
+    
+    public List<UsuarioDTO> PegarMembros(int grupoId){
+        Connection conn; 
+        conn = new sql().conectaBD();
+        
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        List<UsuarioDTO> membros = new ArrayList<>();
+        
+          try {
+            String sql = "SELECT username, avg(nota)"
+                    + " FROM membros AS mem "
+                    + " LEFT JOIN usuarios as usu on"
+                    + " id_membro = usu.id"
+                    + " LEFT JOIN grupos as gru on "
+                    + " id_grupo = gru.id "
+                    + " LEFT JOIN avaliacoes as ava on"
+                    + " ava.usuario_id = usu.id"
+                    + " where gru.id = " + grupoId 
+                    + " group by usu.id;";
+            PreparedStatement pstm = conn.prepareStatement(sql);            
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+                UsuarioDTO membro = new UsuarioDTO();
+                membro.setUsername(rs.getString("username"));
+                membro.setNota(rs.getDouble("avg(nota)"));
+                membros.add(membro);
+            }
+            
+          }catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Não foi possivel recuperar informações sobre os membros do grupo: " + erro,
+                    "database errror" , 2);
+        }
+        return membros;
     }
     
     public List<String> PegarDescricao(int grupoId){
