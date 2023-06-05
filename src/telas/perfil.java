@@ -349,7 +349,7 @@ public class Perfil extends javax.swing.JFrame {
      private void ValidarSenha(String senha){
           if (!senha.equals("")) { 
             usuarioDAO user = new usuarioDAO();//
-            user.atualizarSenha(senha);}            
+            user.AtualizarSenha(senha);}            
         }
           
      private void ChamarApagar(){

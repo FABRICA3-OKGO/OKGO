@@ -1,9 +1,11 @@
 package telas;
 
 import DAO.grupoDAO;
+import DAO.usuarioDAO;
 import DTO.UsuarioDTO;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -61,7 +63,6 @@ public class AdminGrupo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextTag = new javax.swing.JTextArea();
-        jButton5 = new javax.swing.JButton();
         txtNomeGrupo = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -121,7 +122,20 @@ public class AdminGrupo extends javax.swing.JFrame {
             new String [] {
                 "Membros", "Nota Média"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableMembros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMembrosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableMembros);
         if (jTableMembros.getColumnModel().getColumnCount() > 0) {
             jTableMembros.getColumnModel().getColumn(0).setResizable(false);
@@ -146,20 +160,11 @@ public class AdminGrupo extends javax.swing.JFrame {
         getContentPane().add(jScrollPane4);
         jScrollPane4.setBounds(60, 150, 300, 30);
 
-        jButton5.setText("Excluir Membro");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(150, 490, 114, 40);
-
         txtNomeGrupo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtNomeGrupo.setText("PLACEHOLDER");
+        txtNomeGrupo.setText("<html>PLACEHOLDER");
         txtNomeGrupo.setToolTipText("");
         getContentPane().add(txtNomeGrupo);
-        txtNomeGrupo.setBounds(60, 20, 510, 80);
+        txtNomeGrupo.setBounds(50, 0, 550, 100);
 
         jButton6.setText("Voltar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +193,7 @@ public class AdminGrupo extends javax.swing.JFrame {
         getContentPane().add(jLabelId);
         jLabelId.setBounds(130, 70, 140, 30);
 
-        jLabel5.setText("<html><i> Selecione um membro na tabela para avalia-lo.");
+        jLabel5.setText("<html><i> Selecione um membro da tabela para mais opções.");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(420, 450, 140, 70);
 
@@ -207,15 +212,26 @@ public class AdminGrupo extends javax.swing.JFrame {
             ChamarApagarGrupo(); }
     }//GEN-LAST:event_jButtonApagarGrupoActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose(); 
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTableMembrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMembrosMouseClicked
+        int index = jTableMembros.getSelectedRow();
+        TableModel model = jTableMembros.getModel();
+        //pega o username do usuario selecionado
+        String username = model.getValueAt(index, 0).toString();
+        
+        usuarioDAO user = new usuarioDAO();
+            String nome = user.PegarUsuario(username).get(0).toString();
+            String email = user.PegarUsuario(username).get(1).toString();
+            String telefone = user.PegarUsuario(username).get(2).toString();
+            String id = user.PegarUsuario(username).get(3).toString();
+        PerfilMembrosAdm userInfo = new PerfilMembrosAdm(username,nome,email,telefone,id,jLabelId.getText());
+            userInfo.setVisible(true); 
+    }//GEN-LAST:event_jTableMembrosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -255,7 +271,6 @@ public class AdminGrupo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButtonApagarGrupo;
     private javax.swing.JLabel jLabel1;

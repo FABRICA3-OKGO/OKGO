@@ -1,9 +1,11 @@
 package telas;
 
 import DAO.grupoDAO;
+import DAO.usuarioDAO;
 import DTO.UsuarioDTO;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -137,6 +139,7 @@ public class MembroGrupo extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(250, 490, 110, 40);
 
+        jTableMembros.setAutoCreateRowSorter(true);
         jTableMembros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -147,8 +150,27 @@ public class MembroGrupo extends javax.swing.JFrame {
             new String [] {
                 "Membros", "Nota Média"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTableMembros.setFillsViewportHeight(true);
+        jTableMembros.setFocusCycleRoot(true);
+        jTableMembros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMembrosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableMembros);
+        if (jTableMembros.getColumnModel().getColumnCount() > 0) {
+            jTableMembros.getColumnModel().getColumn(0).setResizable(false);
+            jTableMembros.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(400, 90, 180, 380);
@@ -157,7 +179,7 @@ public class MembroGrupo extends javax.swing.JFrame {
         txtNomeGrupo.setText("PLACEHOLDER");
         txtNomeGrupo.setToolTipText("");
         getContentPane().add(txtNomeGrupo);
-        txtNomeGrupo.setBounds(60, 20, 510, 80);
+        txtNomeGrupo.setBounds(50, 10, 510, 80);
 
         jLabel6.setText("Criado por:");
         getContentPane().add(jLabel6);
@@ -177,7 +199,7 @@ public class MembroGrupo extends javax.swing.JFrame {
         getContentPane().add(jLabelId);
         jLabelId.setBounds(130, 70, 140, 30);
 
-        jLabel5.setText("<html><i> Selecione um membro na tabela para avalia-lo.");
+        jLabel5.setText("<html><i> Selecione um membro da tabela para mais opções.");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(420, 450, 160, 70);
 
@@ -201,6 +223,22 @@ public class MembroGrupo extends javax.swing.JFrame {
             ChamarSair(); }
             
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTableMembrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMembrosMouseClicked
+        int index = jTableMembros.getSelectedRow();
+        TableModel model = jTableMembros.getModel();
+        //pega o username do usuario selecionado
+        String username = model.getValueAt(index, 0).toString();
+        
+        usuarioDAO user = new usuarioDAO();
+            String nome = user.PegarUsuario(username).get(0).toString();
+            String email = user.PegarUsuario(username).get(1).toString();
+            String telefone = user.PegarUsuario(username).get(2).toString();
+            String id = user.PegarUsuario(username).get(3).toString();
+        PerfilMembros userInfo = new PerfilMembros(username,nome,email,telefone,id);
+            userInfo.setVisible(true);     
+        
+    }//GEN-LAST:event_jTableMembrosMouseClicked
 
     /**
      * @param args the command line arguments

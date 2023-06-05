@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import telas.Login;
 
@@ -68,7 +70,7 @@ public class usuarioDAO {
         connect.disconnect();    
         }
     
-    public void atualizarSenha(String senha){
+    public void AtualizarSenha(String senha){
         sql connect = new sql();
         connect.connect();
         String query = "UPDATE usuarios SET senha = '" + senha + "' WHERE id = " + Login.id;
@@ -78,6 +80,60 @@ public class usuarioDAO {
             JOptionPane.showMessageDialog(null, "Cadastro atualizado!", "Sucesso!",1);}
         connect.disconnect();    
         }
+    
+    public void Avaliar(String nota, String idUsuario){
+        int idTeste =  Integer.parseInt(idUsuario);
+        if (idTeste == Login.id ) {
+            JOptionPane.showMessageDialog(null, "Você não pode avaliar a sí mesmo","Erro ao avaliar.",2);   
+        }else{
+       
+        sql connect = new sql();
+        connect.connect();
+        String query = "INSERT into avaliacoes (usuario_id, nota) values"
+                + "(" + idUsuario + ", " + nota +")";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Erro ao realizar avaliação.","Erro ao avaliar.",2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Avaliação enviada!", "Sucesso!",1);}
+        connect.disconnect();    
+        }
+    }
+    
+    public List<String> PegarUsuario(String username){
+       Connection conn; 
+       conn = new sql().conectaBD();
+       
+       PreparedStatement stmt = null;
+       ResultSet rs = null;
+       
+       List<String> userInfo = new ArrayList<>();
+       
+       try {
+            String sql = "SELECT nome, email, celular, id FROM usuarios WHERE username = '" + username +"' ;";
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+               String a;
+               String b;
+               String c;
+               String d;
+               a = rs.getString("nome");
+               userInfo.add(a);
+               b = rs.getString("email");
+               userInfo.add(b);
+               c = rs.getString("celular");
+               userInfo.add(c);    
+               d = rs.getString("id");
+               userInfo.add(d);   
+            }           
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Não foi possivel recuperar as informações do usuario desejado: " + erro,
+                    "Erro ao conectar " , 2);
+        }
+       return userInfo;
+    }
     
     public void Apagar(){
         sql connect = new sql();

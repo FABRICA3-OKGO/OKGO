@@ -338,5 +338,22 @@ public class grupoDAO {
         }
         return false;
     }
+    
+    public void Expulsar(String usuarioId, String grupoId){
+        int idTeste =  Integer.parseInt(usuarioId);
+        if (idTeste == Login.id ) {
+            JOptionPane.showMessageDialog(null, "Você não pode expulsar a sí mesmo","Erro ao expulsar.",2);   
+        }else{
+        sql connect = new sql();
+        connect.connect();
+        String query = "DELETE from membros where id_grupo = " + grupoId  +" and "
+                + "id_membro = " + usuarioId + " ;";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Erro ao expulsar usuario.","Erro ao expulsar.",2);
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuário Expulso!", "Sucesso!",1);}
+        connect.disconnect();    
+        }
+    }
    
 }
