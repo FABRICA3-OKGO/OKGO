@@ -1,5 +1,5 @@
 # OKGO
-Crie partys de forma simples e rapida
+Crie partys de forma simples e rápida!
 ## Versão: 2.0 
 ## Status do Projeto: A Fazer
 
