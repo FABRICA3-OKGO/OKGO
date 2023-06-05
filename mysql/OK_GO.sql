@@ -103,6 +103,7 @@ FROM
     usuarios AS usu ON gru.criador_id = usu.id;
     
 ##SELECT gru.nome, tag, gru.id, usu.username AS criador FROM grupos AS gru LEFT JOIN usuarios as usu on gru.criador_id = usu.id ORDER by id;
+## insert into avaliacoes (nota,)
 
 ##MEMBROS
 select

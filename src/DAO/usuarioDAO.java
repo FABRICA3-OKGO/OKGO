@@ -123,6 +123,9 @@ public class usuarioDAO {
                b = rs.getString("email");
                userInfo.add(b);
                c = rs.getString("celular");
+                if (c == null) {
+                    c = "Não Cadastrado";
+                }
                userInfo.add(c);    
                d = rs.getString("id");
                userInfo.add(d);   

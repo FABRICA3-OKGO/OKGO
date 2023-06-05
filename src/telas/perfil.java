@@ -33,7 +33,7 @@ public class Perfil extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        jButtonSalvar = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -77,17 +77,17 @@ public class Perfil extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(30, 460, 24, 24);
 
-        jButton4.setText("Salvar Alterações");
-        jButton4.setMaximumSize(new java.awt.Dimension(76, 22));
-        jButton4.setMinimumSize(new java.awt.Dimension(76, 22));
-        jButton4.setPreferredSize(new java.awt.Dimension(76, 22));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSalvar.setText("Salvar Alterações");
+        jButtonSalvar.setMaximumSize(new java.awt.Dimension(76, 22));
+        jButtonSalvar.setMinimumSize(new java.awt.Dimension(76, 22));
+        jButtonSalvar.setPreferredSize(new java.awt.Dimension(76, 22));
+        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButtonSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(360, 350, 160, 50);
+        getContentPane().add(jButtonSalvar);
+        jButtonSalvar.setBounds(360, 350, 160, 50);
 
         jButton5.setText("Cancelar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -202,14 +202,14 @@ public class Perfil extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         // TODO add your handling code here:
         Validar();
         telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();
         
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -304,9 +304,9 @@ public class Perfil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnApagarConta;
     private javax.swing.JButton btnMudarSenha;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButtonSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -325,7 +325,7 @@ public class Perfil extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
      private void Validar() {
-        if (txtUser.getText().isEmpty() || txtNome.getText().isEmpty() || txtTelefone.getText().isEmpty()) {
+        if (txtUser.getText().isEmpty() &&  txtNome.getText().isEmpty() &&  txtTelefone.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha ao menos um dos campos para atualizar seu cadastro.");
         } else if (!txtUser.getText().isEmpty() && txtNome.getText().isEmpty() && txtTelefone.getText().isEmpty()) {
             System.out.println("NINCKNAME");     
