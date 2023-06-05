@@ -68,25 +68,11 @@ https://github.com/JFormDesigner/FlatLaf
 
 ## Novos Recursos
 
-Exibição de Grupos nas tela Inicial
-
-View Tela Inicial
-
-Exivição de Grupos na tela de Meus Grupos
-
-View Tela Meus Grupos
-
-Visualizar Detalhes do Grupo
-
-Pesquisa Por Grupos
-
-View de Pesquisa Por Grupos
-
-## Resolvendo Problemas 
-
 View de Detalhes do Grupo como Visitante
 
-Entrar no Grupo
+Função Para Participar Do Grupo
+
+## Resolvendo Problemas 
 
 Visualizar como Membro
 
@@ -119,6 +105,20 @@ View de Criação de Grupo
 Alteração de Senha
 
 Excluir Conta
+
+Exibição de Grupos nas tela Inicial
+
+View Tela Inicial
+
+Exivição de Grupos na tela de Meus Grupos
+
+View Tela Meus Grupos
+
+Visualizar Detalhes do Grupo
+
+Pesquisa Por Grupos
+
+View de Pesquisa Por Grupos
 
 ![image](https://user-images.githubusercontent.com/68714869/230674651-ac56638e-39fa-49be-9f9e-0be217c89fa8.png)
 
