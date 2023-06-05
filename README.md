@@ -68,12 +68,6 @@ https://github.com/JFormDesigner/FlatLaf
 
 ## Novos Recursos
 
-View de Detalhes do Grupo como Visitante
-
-Função Para Participar Do Grupo
-
-## Resolvendo Problemas 
-
 Visualizar como Membro
 
 View Tela de Membro
@@ -84,6 +78,10 @@ View Tela Adm do Grupo
 
 Dar Nota a Usuários
 
+## Resolvendo Problemas 
+
+Editar Cadastro
+
 ## Recursos inseridos 🧰
 
 Criar Cadastro
@@ -93,8 +91,6 @@ View de Cadastro
 Acessar Cadastro
 
 View de Login
-
-Editar Cadastro
 
 View de Perfil
 
@@ -119,6 +115,10 @@ Visualizar Detalhes do Grupo
 Pesquisa Por Grupos
 
 View de Pesquisa Por Grupos
+
+View de Detalhes do Grupo como Visitante
+
+Função Para Participar Do Grupo
 
 ![image](https://user-images.githubusercontent.com/68714869/230674651-ac56638e-39fa-49be-9f9e-0be217c89fa8.png)
 
