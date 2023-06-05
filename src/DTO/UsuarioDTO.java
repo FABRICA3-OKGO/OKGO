@@ -4,7 +4,6 @@ package DTO;
  *
  * @author cassi
  */
-
 public class UsuarioDTO {
     
     private int id;

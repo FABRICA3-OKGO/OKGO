@@ -4,7 +4,6 @@
  */
 package telas;
 
-import DAO.sql;
 import DAO.usuarioDAO;
 import telas.Login;
 import javax.swing.JOptionPane;

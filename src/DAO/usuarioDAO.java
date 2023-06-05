@@ -12,7 +12,6 @@ import telas.Login;
  *
  * @author cassi
  */
-
 public class usuarioDAO {
     Connection conn;
     

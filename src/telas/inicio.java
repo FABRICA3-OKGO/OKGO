@@ -6,10 +6,6 @@ package telas;
 
 import DAO.grupoDAO;
 import DTO.grupo;
-//import java.sql.SQLException;
-//import java.util.logging.Level;
-//import java.util.logging.Logger;
-//import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -55,7 +51,8 @@ public class Inicio extends javax.swing.JFrame {
     }
     
     GrupoDetalhes telaInfo = new GrupoDetalhes();
-
+    MembroGrupo telaMembro = new MembroGrupo();
+    AdminGrupo telaAdmin = new AdminGrupo();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -313,32 +310,31 @@ public class Inicio extends javax.swing.JFrame {
         //clicar na tabela e ela levar a outra pagina
         int index = jTable2.getSelectedRow();
         TableModel model = jTable2.getModel();
-        
+        //pega o id do grupo selecionado para pegar as informações adicionais 
         int id = Integer.valueOf(model.getValueAt(index, 0).toString());
-        //pega o id do grupo selecionado para pegar as informações adicionais (Descricao caso membro)
-        
-        //teste pra ver se é membro, criador, ou visitante
-        //bla
-        
-        //tela de visitante
-        //informações reaproveitadas da tela anterior
+        //informações reaproveitadas
         String tag = model.getValueAt(index, 1).toString();
         String nome = model.getValueAt(index, 2).toString();
         String criador = model.getValueAt(index, 3).toString();
-        
-        telaInfo.jLabelId.setText(model.getValueAt(index, 0).toString());
-        telaInfo.txtNomeGrupo.setText(nome);
-        telaInfo.jTextTag.setText(tag);
-        telaInfo.jLabelCriador.setText(criador);
-        //pegando descricao do BD
-        grupoDAO desc = new grupoDAO();  
+        //pegando info adicionais do BD uteis pra todos os tipos de usuario
+        grupoDAO desc = new grupoDAO();
         String descricao = desc.PegarDescricao(id).get(0).toString();
-        telaInfo.jTextDescricao.setText(descricao);
         
-        telaInfo.setVisible(true);
-        telaInfo.pack();
-        telaInfo.setLocationRelativeTo(null);
-        dispose();
+        //teste pra ver se é membro ou adm
+        grupoDAO info = new grupoDAO();
+        if (info.ValidarMembro(id) == 1) { 
+            String contato = info.PegarContato(id).get(0).toString();
+            //teste pra ver se é ADM
+                if (info.ValidarAdm(id)) {
+                    Admin(id,nome,tag,criador,descricao,contato);
+                } else {
+                Membro(id,nome,tag,criador,descricao,contato);
+                }
+        } else if (info.ValidarMembro(id) ==2) {
+            Visitante(id,nome,tag,criador,descricao);
+        } else {
+            System.out.println("Ocorreu um erro na validação.");
+        }        
     }//GEN-LAST:event_jTable2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
@@ -454,4 +450,46 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel txtNomeGrupo;
     private javax.swing.JLabel txtNomeGrupo1;
     // End of variables declaration//GEN-END:variables
+public void Membro(int id, String nome, String tag, String criador, String descricao, String contato){
+    //tela de Membro - definindo os textos
+        telaMembro.jLabelId.setText(Integer.toString(id));
+        telaMembro.txtNomeGrupo.setText(nome);
+        telaMembro.jTextTag.setText(tag);
+        telaMembro.jLabelCriador.setText(criador);
+        telaMembro.jTextDescricao.setText(descricao);
+        telaMembro.jTextContato.setText(contato);
+        //chamando a tela
+        telaMembro.setVisible(true);
+        telaMembro.pack();
+        telaMembro.setLocationRelativeTo(null);
+        dispose();
+}
+    public void Admin(int id, String nome, String tag, String criador, String descricao, String contato){
+    //tela de Membro - definindo os textos
+        telaAdmin.jLabelId.setText(Integer.toString(id));
+        telaAdmin.txtNomeGrupo.setText(nome);
+        telaAdmin.jTextTag.setText(tag);
+        telaAdmin.jLabelCriador.setText(criador);
+        telaAdmin.jTextDescricao.setText(descricao);
+        telaAdmin.jTextContato.setText(contato);
+        //chamando a tela
+        telaAdmin.setVisible(true);
+        telaAdmin.pack();
+        telaAdmin.setLocationRelativeTo(null);
+        dispose();
+}
+    public void Visitante(int id, String nome, String tag, String criador, String descricao){
+    //tela de Membro - definindo os textos
+        telaInfo.jLabelId.setText(Integer.toString(id));
+        telaInfo.txtNomeGrupo.setText(nome);
+        telaInfo.jTextTag.setText(tag);
+        telaInfo.jLabelCriador.setText(criador);
+        telaInfo.jTextDescricao.setText(descricao);
+        //chamando a tela
+        telaInfo.setVisible(true);
+        telaInfo.pack();
+        telaInfo.setLocationRelativeTo(null);
+        dispose();
+}
+    
 }

@@ -1,6 +1,5 @@
 package DAO;
 
-
 import DTO.grupo;
 import DAO.sql;
 import java.sql.Connection;
@@ -166,6 +165,34 @@ public class grupoDAO {
         }
         return descri;
     }
+    
+    public List<String> PegarContato(int grupoId){
+       Connection conn; 
+       conn = new sql().conectaBD();
+        
+       PreparedStatement stmt = null;
+       ResultSet rs = null;
+        
+       List<String> contato = new ArrayList<>();
+            
+        try {
+            String sql = "SELECT contato FROM grupos AS gru"
+                    + " where gru.id = '" + grupoId + "'";
+            PreparedStatement pstm = conn.prepareStatement(sql);            
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+               String a;
+               a = rs.getString("contato");
+               contato.add(a);
+             }
+                
+            } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Não foi possivel recuperar as informações solicitadas do grupo: " + erro,
+                    "database errror" , 2);
+        }
+        return contato;
+    }
 
     public void Participar(String grupoId){
         sql connect = new sql();
@@ -193,4 +220,52 @@ public class grupoDAO {
         connect.disconnect();
     }
     
+    public int ValidarMembro(int grupoId){
+        Connection conn; 
+        conn = new sql().conectaBD();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+       
+        String sql = "select * from membros where id_grupo = " + grupoId + " and id_membro = " + Login.id + " ;"; 
+        try {
+            PreparedStatement pstm = conn.prepareStatement(sql);            
+            rs = pstm.executeQuery();
+            
+            if (rs.next()){
+               int teste = rs.getInt("id_membro");
+                if (teste == Login.id) {
+                    return 1;} // é membro
+            }      
+        } catch (SQLException erro) {
+        JOptionPane.showMessageDialog(null, "Não foi possivel recuperar as informações solicitadas do grupo: " + erro,
+        "database errror" , 2);
+        }
+        return 2;  //não é membro     
+    }
+    
+    public boolean ValidarAdm(int grupoId){
+        Connection conn;
+        conn = new sql().conectaBD();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        String sql = "select criador_id from grupos where id = " + grupoId + " ;"; 
+        try{
+            PreparedStatement pstm = conn.prepareStatement(sql);            
+            rs = pstm.executeQuery();
+            
+            if (rs.next()){
+                int admId = rs.getInt("criador_id");
+                if (Login.id == admId) {
+                    return true;
+                }
+            }else{
+                return false;}
+        } catch (SQLException erro) {
+        JOptionPane.showMessageDialog(null, "Não foi possivel recuperar as informações solicitadas do grupo: " + erro,
+        "database errror" , 2);
+        }
+        return false;
+    }
+   
 }

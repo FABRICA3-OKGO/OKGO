@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package telas;
 
 /**
@@ -28,13 +24,13 @@ public class MembroGrupo extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        jTextTag = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextDescricao = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jTextContato = new javax.swing.JTextArea();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -57,18 +53,18 @@ public class MembroGrupo extends javax.swing.JFrame {
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea3.setEditable(false);
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane4.setViewportView(jTextArea3);
+        jTextTag.setEditable(false);
+        jTextTag.setColumns(20);
+        jTextTag.setRows(5);
+        jScrollPane4.setViewportView(jTextTag);
 
         getContentPane().add(jScrollPane4);
         jScrollPane4.setBounds(60, 150, 300, 30);
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        jTextDescricao.setEditable(false);
+        jTextDescricao.setColumns(20);
+        jTextDescricao.setRows(5);
+        jScrollPane2.setViewportView(jTextDescricao);
 
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(60, 230, 300, 110);
@@ -84,11 +80,11 @@ public class MembroGrupo extends javax.swing.JFrame {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea2.setEditable(false);
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("\n");
-        jScrollPane3.setViewportView(jTextArea2);
+        jTextContato.setEditable(false);
+        jTextContato.setColumns(20);
+        jTextContato.setRows(5);
+        jTextContato.setText("\n");
+        jScrollPane3.setViewportView(jTextContato);
 
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(60, 380, 300, 60);
@@ -109,7 +105,7 @@ public class MembroGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(140, 490, 114, 40);
+        jButton5.setBounds(140, 490, 115, 40);
 
         jButton3.setText("Sair do Grupo");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +168,9 @@ public class MembroGrupo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        telas.Inicio telaInicio = new Inicio();
+                            telaInicio.setVisible(true);
+                            dispose(); 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -237,9 +235,9 @@ public class MembroGrupo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JLabel txtNomeGrupo;
+    public javax.swing.JTextArea jTextContato;
+    public javax.swing.JTextArea jTextDescricao;
+    public javax.swing.JTextArea jTextTag;
+    public javax.swing.JLabel txtNomeGrupo;
     // End of variables declaration//GEN-END:variables
 }
