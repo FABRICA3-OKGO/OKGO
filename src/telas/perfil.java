@@ -5,6 +5,7 @@
 package telas;
 
 import DAO.sql;
+import DAO.usuarioDAO;
 import telas.Login;
 import javax.swing.JOptionPane;
 
@@ -221,17 +222,7 @@ public class Perfil extends javax.swing.JFrame {
     private void btnMudarSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMudarSenhaActionPerformed
         // TODO add your handling code here:
         String senhaNova = JOptionPane.showInputDialog("Insira sua nova senha");
-        
-        
-        if (!senhaNova.equals("")) { //Cancelar
-            System.out.println(senhaNova);
-            atualizarSenha(senhaNova);
-            //telas.Perfil telaPerfil = new Perfil();
-            //                telaPerfil.setVisible(true);
-            //                dispose();                   
-        }
-             
-        
+        ValidarSenha(senhaNova);
     }//GEN-LAST:event_btnMudarSenhaActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
@@ -260,10 +251,13 @@ public class Perfil extends javax.swing.JFrame {
         System.out.println(escolha);
         if (escolha == 0) { //Cancelar
             telas.Perfil telaPerfil = new Perfil();
-                            telaPerfil.setVisible(true);
-                            dispose();                   
+                telaPerfil.setVisible(true);
+                dispose();                   
         }else //Confirmar
-            Apagar(); 
+            ChamarApagar(); 
+            telas.Login telaLogin = new Login();
+                            telaLogin.setVisible(true);
+                            dispose();
      
     
     }//GEN-LAST:event_btnApagarContaActionPerformed
@@ -334,68 +328,36 @@ public class Perfil extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
      private void Validar() {
-
         if (txtUser.getText().isEmpty() || txtNome.getText().isEmpty() || txtTelefone.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Preencha ao menos um dos campos para atualizar seu cadastro.");
-
         } else if (!txtUser.getText().isEmpty() && txtNome.getText().isEmpty() && txtTelefone.getText().isEmpty()) {
-            System.out.println("NINCKNAME");
-            
+            System.out.println("NINCKNAME");     
         } else if (txtUser.getText().isEmpty() && !txtNome.getText().isEmpty() && txtTelefone.getText().isEmpty()) {
-            System.out.println("NOME");
-            
+            System.out.println("NOME");    
         } else if (txtUser.getText().isEmpty() && txtNome.getText().isEmpty() && !txtTelefone.getText().isEmpty()) {
             System.out.println("TELEFONE");
-            
         } else if (!txtUser.getText().isEmpty() && txtNome.getText().isEmpty() && txtTelefone.getText().isEmpty()) {
             System.out.println("NINCKNAME E NOME");
-        
         } else if (!txtUser.getText().isEmpty() && txtNome.getText().isEmpty() && !txtTelefone.getText().isEmpty()) {
             System.out.println("NINCKNAME E TELEFONE");
-            
         } else if (txtUser.getText().isEmpty() && !txtNome.getText().isEmpty() && !txtTelefone.getText().isEmpty()) {
             System.out.println("NOME E TELEFONE");
-        
         } else {  
             System.out.println("TODOS");
-            atualizar(txtUser.getText(), txtNome.getText(), txtTelefone.getText());
-            
+            usuarioDAO user = new usuarioDAO();
+            user.atualizar(txtUser.getText(), txtNome.getText(), txtTelefone.getText()); 
         }
      }
-        
-        public void atualizar(String user, String nome, String telefone){
-        sql connect = new sql();
-        connect.connect();
-        String query = "UPDATE usuarios SET username = '" + user + "', nome = '" + nome +"', celular = '" + telefone + "' WHERE id = " + Login.id;
-        if (connect.insertSQL(query) == 0) {
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar cadastro.","Erro ao atualizar cadastro.",2);
-        }else{
-            JOptionPane.showMessageDialog(null, "Cadastro atualizado!", "Sucesso!",1);}
-        connect.disconnect();    
+     
+     private void ValidarSenha(String senha){
+          if (!senha.equals("")) { 
+            usuarioDAO user = new usuarioDAO();//
+            user.atualizarSenha(senha);}            
         }
-        
-        public void atualizarSenha(String senha){
-        sql connect = new sql();
-        connect.connect();
-        String query = "UPDATE usuarios SET senha = '" + senha + "' WHERE id = " + Login.id;
-        if (connect.insertSQL(query) == 0) {
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar cadastro.","Erro ao atualizar cadastro.",2);
-        }else{
-            JOptionPane.showMessageDialog(null, "Cadastro atualizado!", "Sucesso!",1);}
-        connect.disconnect();    
-        } 
-        
-        public void Apagar(){
-        sql connect = new sql();
-        connect.connect();
-        String query = "UPDATE usuarios SET email = null ,username = 'Usuario Apagado', nome = '', senha = '', celular = null WHERE id = '" + Login.id + "'";
-        if (connect.insertSQL(query) == 0) {
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar cadastro.","Erro ao atualizar cadastro.",2);
-        }else{
-            JOptionPane.showMessageDialog(null, "Conta Encerrada com sucesso.", "Cadastro Deletado.",1);}
-        connect.disconnect();    
-        telas.Login telaLogin = new Login();
-                            telaLogin.setVisible(true);
-                            dispose();
-        } 
+          
+     private void ChamarApagar(){
+         usuarioDAO user = new usuarioDAO();//
+            user.Apagar();   
+     }
+         
 }

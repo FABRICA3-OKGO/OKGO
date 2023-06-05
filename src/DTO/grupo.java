@@ -6,13 +6,13 @@ package DTO;
  */
 public class grupo {
     int id;//
-    int criadorId;//
+    int criadorId;
     String tag;//
     String nome;//
-    String descricao;//
-    String contato;//
+    String descricao;
+    String contato;
     String dataCriacao;
-    String Criador;
+    String Criador;//
 
     public int getId() {
         return id;

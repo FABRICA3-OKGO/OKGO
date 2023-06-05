@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import telas.Login;
 import static telas.Login.id;
 
 /**
@@ -117,8 +118,6 @@ public class grupoDAO {
             String sql = "SELECT gru.nome, tag, gru.id, usu.username AS criador"
                     + " FROM grupos AS gru LEFT JOIN usuarios as usu on"
                     + " gru.criador_id = usu.id"
-                    + " LEFT JOIN membros as mem"
-                    + " on id_grupo = gru.id"
                     + " where tag = '" + tag 
                     + "' ORDER by id DESC;";
             PreparedStatement pstm = conn.prepareStatement(sql);            
@@ -134,11 +133,64 @@ public class grupoDAO {
             }
             
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Não foi possivel recuperar informações dos grupos mais recentes: " + erro,
+            JOptionPane.showMessageDialog(null, "Não foi possivel recuperar informações de grupos correspondentes a pesquisa: " + erro,
                     "database errror" , 2);
         }
         return grupos;
     }
     
-  
+    public List<String> PegarDescricao(int grupoId){
+       Connection conn; 
+       conn = new sql().conectaBD();
+        
+       PreparedStatement stmt = null;
+       ResultSet rs = null;
+        
+       List<String> descri = new ArrayList<>();
+            
+        try {
+            String sql = "SELECT descricao FROM grupos AS gru"
+                    + " where gru.id = '" + grupoId + "'";
+            PreparedStatement pstm = conn.prepareStatement(sql);            
+            rs = pstm.executeQuery();
+            
+            while (rs.next()){
+               String a;
+               a = rs.getString("descricao");
+               descri.add(a);
+             }
+                
+            } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Não foi possivel recuperar a descricao do grupo: " + erro,
+                    "database errror" , 2);
+        }
+        return descri;
+    }
+
+    public void Participar(String grupoId){
+        sql connect = new sql();
+        connect.connect();
+        String query ="insert into membros (id_grupo, id_membro) values "
+                +"( '" + grupoId + "','" + Login.id + "');";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Não foi possível entrar no grupo.","Erro ao entrar no grupo.",2);
+            connect.disconnect();
+        }else{
+            JOptionPane.showMessageDialog(null, "Inscrito com sucesso!", "Sucesso!",1);}
+        connect.disconnect();
+    }
+    
+    public void criarGrupo(String nome, String tag, String descricao, String contato){
+        sql connect = new sql();
+        connect.connect();
+        String query ="insert into grupos (tag, nome, descricao, criador_id, contato) values "
+                +"( '" + tag + "','" + nome + "','" + descricao + "','" + Login.id + "','" + contato + "');";
+        if (connect.insertSQL(query) == 0) {
+            JOptionPane.showMessageDialog(null, "Não foi possível criar o grupo.","Erro ao criar grupo.",2);
+            connect.disconnect();
+        }else{
+            JOptionPane.showMessageDialog(null, "Grupo criado!", "Sucesso!",1);}
+        connect.disconnect();
+    }
+    
 }

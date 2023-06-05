@@ -4,6 +4,7 @@
  */
 package telas;
 
+import DAO.grupoDAO;
 import DAO.sql;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -209,24 +210,12 @@ public class CriarGrupo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos de cadastro corretamente!");
         } else {
             System.out.println("Informações de Grupo preenchidas corretamente.");
-            criarGrupo(txtNomeGrupo.getText(), txtTag.getText(), txtDescricao.getText(), txtContato.getText());
+            grupoDAO a = new grupoDAO();
+            a.criarGrupo(txtNomeGrupo.getText(), txtTag.getText(), txtDescricao.getText(), txtContato.getText());
             telas.Inicio telaInicio = new Inicio();
                             telaInicio.setVisible(true);
                             dispose();
         }
     } 
-    
-    public void criarGrupo(String nome, String tag, String descricao, String contato){
-        sql connect = new sql();
-        connect.connect();
-        String query ="insert into grupos (tag, nome, descricao, criador_id, contato) values "
-                +"( '" + tag + "','" + nome + "','" + descricao + "','" + Login.id + "','" + contato + "');";
-        if (connect.insertSQL(query) == 0) {
-            JOptionPane.showMessageDialog(null, "Não foi possível criar o grupo.","Erro ao criar grupo.",2);
-            connect.disconnect();
-        }else{
-            JOptionPane.showMessageDialog(null, "Grupo criado!", "Sucesso!",1);}
-        connect.disconnect();
-    }
      
 }

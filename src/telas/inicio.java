@@ -6,7 +6,10 @@ package telas;
 
 import DAO.grupoDAO;
 import DTO.grupo;
-import javax.swing.JFrame;
+//import java.sql.SQLException;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+//import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -307,32 +310,35 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
-        //adicionar teste pra ver se é membro antes!!!     
-        //clicar na tabela e ela levar a outra pagina!!
+        //clicar na tabela e ela levar a outra pagina
         int index = jTable2.getSelectedRow();
         TableModel model = jTable2.getModel();
         
         int id = Integer.valueOf(model.getValueAt(index, 0).toString());
-        //pega o id do grupo selecionado
+        //pega o id do grupo selecionado para pegar as informações adicionais (Descricao caso membro)
         
         //teste pra ver se é membro, criador, ou visitante
         //bla
         
-        //tela de visitante        
+        //tela de visitante
+        //informações reaproveitadas da tela anterior
         String tag = model.getValueAt(index, 1).toString();
         String nome = model.getValueAt(index, 2).toString();
         String criador = model.getValueAt(index, 3).toString();
         
+        telaInfo.jLabelId.setText(model.getValueAt(index, 0).toString());
+        telaInfo.txtNomeGrupo.setText(nome);
+        telaInfo.jTextTag.setText(tag);
+        telaInfo.jLabelCriador.setText(criador);
+        //pegando descricao do BD
+        grupoDAO desc = new grupoDAO();  
+        String descricao = desc.PegarDescricao(id).get(0).toString();
+        telaInfo.jTextDescricao.setText(descricao);
+        
         telaInfo.setVisible(true);
         telaInfo.pack();
         telaInfo.setLocationRelativeTo(null);
-        telaInfo.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-        telaInfo.txtNomeGrupo.setText(nome);
-        telaInfo.jTextTag.setText(tag);
-        telaInfo.jLabelCriador.setText(criador);    
-        
-       
+        dispose();
     }//GEN-LAST:event_jTable2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked

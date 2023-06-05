@@ -48,29 +48,6 @@ create trigger criador_membro after insert on grupos
         end$
 delimiter ;
 
-delimiter $
-create trigger apagar_usuario before delete on usuarios
-	for each row
-    begin
-         INSERT INTO membros (id_membro)
-         values (OLD.usuario.id);
-         INSERT INTO grupos (criador_id)
-         values (OLD.usuario.id);
-        end$
-delimiter ;
-
-delimiter $
-create trigger apagar_usuario before delete on usuarios
-	for each row
-    begin
-         INSERT INTO membros (id_membro)
-         values (OLD.usuario.id);
-         INSERT INTO grupos (criador_id)
-         values (OLD.usuario.id);
-        end$
-delimiter ;
-
-
 insert into usuarios (username, nome, email, senha, celular) values
 ('Joao123','Joao Victor', 'joao@gmail.com', 'joaozinho123', '15999999999'),
 ('WnCassillo', 'Wilson Neto', 'wilson@gmail.com', '54321', '15888888888');
@@ -127,15 +104,17 @@ FROM
     
 ##SELECT gru.nome, tag, gru.id, usu.username AS criador FROM grupos AS gru LEFT JOIN usuarios as usu on gru.criador_id = usu.id ORDER by id;
 
-##
-
 ##MEMBROS
 select 
 	gru.nome,
+    usu.id,
 	usu.username
 from membros
 left join grupos as gru 
 on id_grupo = gru.id
 left join usuarios as usu
-on id_membro = usu.id;		
+on id_membro = usu.id;
+
+
+		
 

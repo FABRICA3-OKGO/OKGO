@@ -4,6 +4,8 @@
  */
 package telas;
 
+import DAO.grupoDAO;
+
 /**
  *
  * @author cassi
@@ -34,7 +36,7 @@ public class GrupoDetalhes extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextDescricao = new javax.swing.JTextArea();
-        jButton4 = new javax.swing.JButton();
+        jButtonParticipar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabelCriador = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -75,14 +77,19 @@ public class GrupoDetalhes extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(90, 240, 300, 110);
 
-        jButton4.setText("Participar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        jButtonParticipar.setText("Participar");
+        jButtonParticipar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonParticiparMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(250, 400, 110, 30);
+        jButtonParticipar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonParticiparActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonParticipar);
+        jButtonParticipar.setBounds(250, 400, 110, 30);
 
         jLabel1.setText("DESCRIÇÃO DO GRUPO");
         getContentPane().add(jLabel1);
@@ -138,9 +145,14 @@ public class GrupoDetalhes extends javax.swing.JFrame {
                             dispose();                                
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButtonParticiparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonParticiparActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        entrarGrupo();
+    }//GEN-LAST:event_jButtonParticiparActionPerformed
+
+    private void jButtonParticiparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonParticiparMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonParticiparMouseClicked
 
     /**
      * @param args the command line arguments
@@ -182,7 +194,7 @@ public class GrupoDetalhes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButtonParticipar;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
@@ -200,4 +212,15 @@ public class GrupoDetalhes extends javax.swing.JFrame {
     public javax.swing.JTextArea jTextTag;
     public javax.swing.JLabel txtNomeGrupo;
     // End of variables declaration//GEN-END:variables
+
+    //metodos
+    public void entrarGrupo(){
+    String grupoId = jLabelId.getText();
+    grupoDAO grupo = new grupoDAO();
+    grupo.Participar(grupoId);
+    telas.MeusGrupos telaGruposUsuario = new MeusGrupos();
+                            telaGruposUsuario.setVisible(true);
+                            dispose();
+    }
+    
 }
