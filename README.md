@@ -78,9 +78,11 @@ View Tela Adm do Grupo
 
 Dar Nota a Usuários
 
+Editar Cadastro
+
 ## Resolvendo Problemas 
 
-Editar Cadastro
+Descobrindo Problemas
 
 ## Recursos inseridos 🧰
 
