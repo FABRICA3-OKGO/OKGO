@@ -33,26 +33,25 @@ public class Perfil extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButtonSalvar = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtTelefone = new javax.swing.JTextPane();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtUser = new javax.swing.JTextPane();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        txtNome = new javax.swing.JTextPane();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnMudarSenha = new javax.swing.JButton();
         btnApagarConta = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButtonSalvar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtTelefone = new javax.swing.JTextPane();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtNome = new javax.swing.JTextPane();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtUser = new javax.swing.JTextPane();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(600, 600));
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt (1).png"))); // NOI18N
@@ -62,11 +61,11 @@ public class Perfil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(30, 410, 24, 24);
+        jLabel3.setBounds(20, 410, 24, 24);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/definicoes (1).png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 510, 24, 24);
+        jLabel1.setBounds(20, 510, 24, 24);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa.png"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -75,8 +74,48 @@ public class Perfil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(30, 460, 24, 24);
+        jLabel5.setBounds(20, 460, 24, 24);
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setDoubleBuffered(false);
+        jPanel1.setEnabled(false);
+        jPanel1.setFocusable(false);
+        jPanel1.setRequestFocusEnabled(false);
+        jPanel1.setVerifyInputWhenFocusTarget(false);
+        jPanel1.setLayout(null);
+
+        btnMudarSenha.setText("Mudar sua Senha");
+        btnMudarSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMudarSenhaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnMudarSenha);
+        btnMudarSenha.setBounds(250, 400, 140, 40);
+
+        btnApagarConta.setBackground(new java.awt.Color(255, 102, 102));
+        btnApagarConta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnApagarConta.setForeground(new java.awt.Color(51, 51, 51));
+        btnApagarConta.setText("Apagar Conta");
+        btnApagarConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnApagarContaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnApagarConta);
+        btnApagarConta.setBounds(90, 460, 460, 40);
+
+        jButton5.setText("Cancelar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5);
+        jButton5.setBounds(90, 400, 140, 40);
+
+        jButtonSalvar.setBackground(new java.awt.Color(255, 255, 102));
+        jButtonSalvar.setForeground(new java.awt.Color(51, 51, 51));
         jButtonSalvar.setText("Salvar Alterações");
         jButtonSalvar.setMaximumSize(new java.awt.Dimension(76, 22));
         jButtonSalvar.setMinimumSize(new java.awt.Dimension(76, 22));
@@ -86,117 +125,50 @@ public class Perfil extends javax.swing.JFrame {
                 jButtonSalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalvar);
-        jButtonSalvar.setBounds(360, 350, 160, 50);
-
-        jButton5.setText("Cancelar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(110, 350, 160, 50);
-
-        jLabel2.setText("Digite seu TELEFONE:");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(110, 270, 410, 16);
+        jPanel1.add(jButtonSalvar);
+        jButtonSalvar.setBounds(410, 400, 140, 40);
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane2.setViewportView(txtTelefone);
 
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(110, 290, 410, 20);
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(90, 330, 460, 30);
 
-        jLabel4.setText("Digite seu USER:");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(110, 150, 410, 16);
-
-        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        jScrollPane3.setViewportView(txtUser);
-
-        getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(110, 170, 410, 20);
+        jLabel2.setText("Digite seu TELEFONE:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(90, 310, 410, 16);
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane4.setViewportView(txtNome);
 
-        getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(110, 230, 410, 20);
+        jPanel1.add(jScrollPane4);
+        jScrollPane4.setBounds(90, 270, 460, 30);
 
         jLabel10.setText("Digite seu NOME:");
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(110, 210, 410, 16);
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(90, 250, 410, 16);
+
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane3.setViewportView(txtUser);
+
+        jPanel1.add(jScrollPane3);
+        jScrollPane3.setBounds(90, 210, 460, 30);
+
+        jLabel4.setText("Digite seu USER:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(90, 190, 410, 16);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel6.setText("EDIÇÃO DE PERFIL");
         jLabel6.setToolTipText("");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(120, 60, 410, 50);
-
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(110, 430, 350, 20);
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.setDoubleBuffered(false);
-        jPanel1.setEnabled(false);
-        jPanel1.setFocusable(false);
-        jPanel1.setRequestFocusEnabled(false);
-        jPanel1.setVerifyInputWhenFocusTarget(false);
-
-        btnMudarSenha.setText("Mudar sua Senha");
-        btnMudarSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMudarSenhaActionPerformed(evt);
-            }
-        });
-
-        btnApagarConta.setText("Apagar Conta");
-        btnApagarConta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnApagarContaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(btnMudarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(btnApagarConta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(485, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMudarSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnApagarConta, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(61, 61, 61))
-        );
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(90, 110, 410, 50);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(70, 0, 470, 600);
-
-        jButton6.setText("Salvar Alterações");
-        jButton6.setMaximumSize(new java.awt.Dimension(76, 22));
-        jButton6.setMinimumSize(new java.awt.Dimension(76, 22));
-        jButton6.setPreferredSize(new java.awt.Dimension(76, 22));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton6);
-        jButton6.setBounds(360, 350, 160, 50);
+        jPanel1.setBounds(60, -20, 650, 650);
 
         pack();
         setLocationRelativeTo(null);
@@ -237,10 +209,6 @@ public class Perfil extends javax.swing.JFrame {
                             telaInicio.setVisible(true);
                             dispose(); 
     }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btnApagarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarContaActionPerformed
         // TODO add your handling code here:      
@@ -305,7 +273,6 @@ public class Perfil extends javax.swing.JFrame {
     private javax.swing.JButton btnApagarConta;
     private javax.swing.JButton btnMudarSenha;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -314,7 +281,6 @@ public class Perfil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

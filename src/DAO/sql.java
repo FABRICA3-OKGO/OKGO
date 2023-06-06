@@ -20,7 +20,7 @@ public class sql {
     private String server = "localhost:3306";
     private String databaseName = "OK_GO";
     private String user = "root";
-    private String password = "PinkDarkchylde.1412";
+    private String password = "root";
     
     public sql(){}
     

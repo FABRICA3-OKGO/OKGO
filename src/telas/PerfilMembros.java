@@ -37,7 +37,6 @@ public class PerfilMembros extends javax.swing.JFrame {
     private void initComponents() {
 
         txtUsername = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextNome = new javax.swing.JTextArea();
@@ -50,10 +49,12 @@ public class PerfilMembros extends javax.swing.JFrame {
         jButtonAvaliar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabelId = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(400, 350));
-        setPreferredSize(new java.awt.Dimension(400, 350));
+        setMaximumSize(new java.awt.Dimension(600, 600));
+        setMinimumSize(new java.awt.Dimension(600, 600));
+        setPreferredSize(new java.awt.Dimension(600, 600));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -61,15 +62,11 @@ public class PerfilMembros extends javax.swing.JFrame {
         txtUsername.setText("USERNAME");
         txtUsername.setToolTipText("");
         getContentPane().add(txtUsername);
-        txtUsername.setBounds(45, 28, 327, 25);
-
-        jLabel1.setText("<html> <i> Informações do usuário:");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(75, 0, 178, 16);
+        txtUsername.setBounds(80, 110, 430, 30);
 
         jLabel2.setText("<html> <i> Nome:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(45, 71, 178, 10);
+        jLabel2.setBounds(80, 190, 178, 20);
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -82,11 +79,11 @@ public class PerfilMembros extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTextNome);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(50, 90, 264, 26);
+        jScrollPane4.setBounds(80, 210, 430, 30);
 
         jLabel3.setText("<html> <i> E-mail:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(45, 125, 178, 10);
+        jLabel3.setBounds(80, 250, 178, 20);
 
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -100,7 +97,7 @@ public class PerfilMembros extends javax.swing.JFrame {
         jScrollPane5.setViewportView(jTextEmail);
 
         getContentPane().add(jScrollPane5);
-        jScrollPane5.setBounds(51, 141, 264, 26);
+        jScrollPane5.setBounds(80, 270, 430, 30);
 
         jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -114,12 +111,14 @@ public class PerfilMembros extends javax.swing.JFrame {
         jScrollPane6.setViewportView(jTextTelefone);
 
         getContentPane().add(jScrollPane6);
-        jScrollPane6.setBounds(51, 195, 264, 26);
+        jScrollPane6.setBounds(80, 330, 430, 30);
 
         jLabel4.setText("<html> <i> Telefone:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(45, 179, 178, 10);
+        jLabel4.setBounds(80, 310, 178, 20);
 
+        jButtonAvaliar.setBackground(new java.awt.Color(255, 255, 102));
+        jButtonAvaliar.setForeground(new java.awt.Color(51, 51, 51));
         jButtonAvaliar.setText("Avaliar");
         jButtonAvaliar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,16 +126,20 @@ public class PerfilMembros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonAvaliar);
-        jButtonAvaliar.setBounds(233, 239, 82, 22);
+        jButtonAvaliar.setBounds(230, 400, 140, 40);
 
         jLabel8.setText("User ID:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(250, 50, 70, 30);
+        jLabel8.setBounds(80, 140, 70, 30);
 
         jLabelId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelId.setText("IDAqui");
         getContentPane().add(jLabelId);
-        jLabelId.setBounds(300, 50, 50, 30);
+        jLabelId.setBounds(120, 140, 390, 30);
+
+        jLabel1.setText("<html> <i> Informações do usuário:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(80, 90, 178, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -75,12 +75,13 @@ public class MembroGrupo extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(610, 600));
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
         jLabel3.setText("TAG");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 120, 300, 30);
+        jLabel3.setBounds(110, 90, 300, 30);
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -91,7 +92,7 @@ public class MembroGrupo extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTextTag);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(60, 150, 300, 30);
+        jScrollPane4.setBounds(110, 120, 320, 30);
 
         jTextDescricao.setEditable(false);
         jTextDescricao.setColumns(20);
@@ -99,15 +100,15 @@ public class MembroGrupo extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextDescricao);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(60, 230, 300, 110);
+        jScrollPane2.setBounds(110, 190, 320, 110);
 
         jLabel1.setText("DESCRIÇÃO DO GRUPO");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 200, 300, 30);
+        jLabel1.setBounds(110, 160, 320, 30);
 
         jLabel2.setText("CONTATO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 350, 300, 30);
+        jLabel2.setBounds(110, 310, 320, 30);
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -119,7 +120,7 @@ public class MembroGrupo extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTextContato);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(60, 380, 300, 60);
+        jScrollPane3.setBounds(110, 340, 320, 60);
 
         jButton4.setText("Voltar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -128,8 +129,10 @@ public class MembroGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(60, 490, 110, 40);
+        jButton4.setBounds(110, 450, 140, 40);
 
+        jButton3.setBackground(new java.awt.Color(255, 153, 102));
+        jButton3.setForeground(new java.awt.Color(51, 51, 51));
         jButton3.setText("Sair do Grupo");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +140,7 @@ public class MembroGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(250, 490, 110, 40);
+        jButton3.setBounds(520, 450, 140, 40);
 
         jTableMembros.setAutoCreateRowSorter(true);
         jTableMembros.setModel(new javax.swing.table.DefaultTableModel(
@@ -161,6 +164,7 @@ public class MembroGrupo extends javax.swing.JFrame {
         });
         jTableMembros.setFillsViewportHeight(true);
         jTableMembros.setFocusCycleRoot(true);
+        jTableMembros.getTableHeader().setReorderingAllowed(false);
         jTableMembros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableMembrosMouseClicked(evt);
@@ -173,35 +177,35 @@ public class MembroGrupo extends javax.swing.JFrame {
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(400, 90, 180, 380);
+        jScrollPane1.setBounds(450, 120, 210, 280);
 
         txtNomeGrupo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtNomeGrupo.setText("PLACEHOLDER");
         txtNomeGrupo.setToolTipText("");
         getContentPane().add(txtNomeGrupo);
-        txtNomeGrupo.setBounds(50, 10, 510, 80);
+        txtNomeGrupo.setBounds(110, 30, 320, 40);
 
         jLabel6.setText("Criado por:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(400, 60, 70, 30);
+        jLabel6.setBounds(110, 400, 60, 30);
 
         jLabelCriador.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelCriador.setText("nomeAqui");
         getContentPane().add(jLabelCriador);
-        jLabelCriador.setBounds(470, 60, 140, 30);
+        jLabelCriador.setBounds(170, 400, 140, 30);
 
         jLabel7.setText("Grupod ID:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(60, 70, 70, 30);
+        jLabel7.setBounds(110, 60, 57, 30);
 
         jLabelId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelId.setText("IDAqui");
         getContentPane().add(jLabelId);
-        jLabelId.setBounds(130, 70, 140, 30);
+        jLabelId.setBounds(170, 60, 140, 30);
 
-        jLabel5.setText("<html><i> Selecione um membro da tabela para mais opções.");
+        jLabel5.setText("<html><i> Selecione um membro para mais opções.");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(420, 450, 160, 70);
+        jLabel5.setBounds(450, 400, 211, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

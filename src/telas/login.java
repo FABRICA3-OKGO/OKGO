@@ -43,15 +43,16 @@ public class Login extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtEmail = new javax.swing.JTextPane();
         botaoLogin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
@@ -66,13 +67,15 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(390, 470, 350, 40);
         getContentPane().add(txtSenha);
-        txtSenha.setBounds(390, 290, 350, 40);
+        txtSenha.setBounds(390, 290, 350, 30);
 
         jScrollPane1.setViewportView(txtEmail);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(390, 220, 350, 40);
+        jScrollPane1.setBounds(390, 220, 350, 30);
 
+        botaoLogin.setBackground(new java.awt.Color(102, 102, 255));
+        botaoLogin.setForeground(new java.awt.Color(51, 51, 51));
         botaoLogin.setText("Login");
         botaoLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,22 +85,9 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(botaoLogin);
         botaoLogin.setBounds(390, 360, 350, 40);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("LOGIN");
-        jLabel1.setToolTipText("");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(390, 130, 180, 50);
-
         jLabel2.setText("Digite seu e-mail:");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(390, 200, 350, 16);
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Bem Vindo");
-        jLabel3.setToolTipText("");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(470, 50, 180, 50);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Novo por aqui? Crie sua conta agora");
@@ -108,10 +98,14 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(390, 270, 350, 16);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/header.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/headerlogin.png"))); // NOI18N
         jLabel6.setToolTipText("");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 0, 340, 600);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AAAAAAAAAAAA.png"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(460, 90, 230, 60);
 
         pack();
         setLocationRelativeTo(null);
@@ -192,12 +186,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton botaoLogin;
     private javax.swing.JButton jButton1;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane txtEmail;
     private javax.swing.JPasswordField txtSenha;

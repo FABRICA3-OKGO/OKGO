@@ -53,7 +53,8 @@ public class GrupoDetalhes extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTextArea3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(470, 540));
+        setMaximumSize(new java.awt.Dimension(600, 600));
+        setMinimumSize(new java.awt.Dimension(600, 600));
         getContentPane().setLayout(null);
 
         jButton3.setText("Voltar");
@@ -63,7 +64,7 @@ public class GrupoDetalhes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(110, 400, 110, 30);
+        jButton3.setBounds(70, 430, 140, 40);
 
         jTextDescricao.setEditable(false);
         jTextDescricao.setColumns(20);
@@ -71,8 +72,10 @@ public class GrupoDetalhes extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextDescricao);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(90, 240, 300, 110);
+        jScrollPane2.setBounds(70, 250, 450, 110);
 
+        jButtonParticipar.setBackground(new java.awt.Color(255, 255, 102));
+        jButtonParticipar.setForeground(new java.awt.Color(51, 51, 51));
         jButtonParticipar.setText("Participar");
         jButtonParticipar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -85,16 +88,16 @@ public class GrupoDetalhes extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonParticipar);
-        jButtonParticipar.setBounds(250, 400, 110, 30);
+        jButtonParticipar.setBounds(380, 430, 140, 40);
 
         jLabel1.setText("DESCRIÇÃO DO GRUPO");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(90, 210, 300, 30);
+        jLabel1.setBounds(70, 220, 300, 30);
 
         jLabelCriador.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelCriador.setText("nomeAqui");
         getContentPane().add(jLabelCriador);
-        jLabelCriador.setBounds(300, 90, 140, 30);
+        jLabelCriador.setBounds(380, 360, 140, 30);
 
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -105,30 +108,30 @@ public class GrupoDetalhes extends javax.swing.JFrame {
         jScrollPane5.setViewportView(jTextTag);
 
         getContentPane().add(jScrollPane5);
-        jScrollPane5.setBounds(90, 160, 300, 30);
+        jScrollPane5.setBounds(70, 170, 450, 30);
 
         txtNomeGrupo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtNomeGrupo.setText("PLACEHOLDER");
         txtNomeGrupo.setToolTipText("");
         getContentPane().add(txtNomeGrupo);
-        txtNomeGrupo.setBounds(30, 20, 300, 80);
+        txtNomeGrupo.setBounds(70, 70, 300, 80);
 
         jLabel5.setText("TAG");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(90, 130, 300, 30);
+        jLabel5.setBounds(70, 140, 300, 30);
 
         jLabel6.setText("Criado por:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(230, 90, 70, 30);
+        jLabel6.setBounds(320, 360, 60, 30);
 
         jLabel7.setText("Grupod ID:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(80, 90, 70, 30);
+        jLabel7.setBounds(70, 360, 60, 30);
 
         jLabelId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelId.setText("IDAqui");
         getContentPane().add(jLabelId);
-        jLabelId.setBounds(150, 90, 140, 30);
+        jLabelId.setBounds(130, 360, 140, 30);
 
         pack();
         setLocationRelativeTo(null);

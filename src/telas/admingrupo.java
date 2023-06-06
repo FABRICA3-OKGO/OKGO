@@ -72,9 +72,13 @@ public class AdminGrupo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(650, 600));
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
+        jButtonApagarGrupo.setBackground(new java.awt.Color(255, 102, 102));
+        jButtonApagarGrupo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonApagarGrupo.setForeground(new java.awt.Color(51, 51, 51));
         jButtonApagarGrupo.setText("Apagar Grupo");
         jButtonApagarGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +86,7 @@ public class AdminGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonApagarGrupo);
-        jButtonApagarGrupo.setBounds(270, 490, 110, 40);
+        jButtonApagarGrupo.setBounds(520, 450, 140, 40);
 
         jTextDescricao.setEditable(false);
         jTextDescricao.setColumns(20);
@@ -90,7 +94,7 @@ public class AdminGrupo extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextDescricao);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(60, 230, 300, 110);
+        jScrollPane2.setBounds(110, 190, 320, 110);
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -102,18 +106,19 @@ public class AdminGrupo extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTextContato);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(60, 380, 300, 60);
+        jScrollPane3.setBounds(110, 340, 320, 60);
 
         jLabel1.setText("DESCRIÇÃO DO GRUPO");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 200, 300, 30);
+        jLabel1.setBounds(110, 160, 320, 30);
 
         jLabel2.setText("CONTATO");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 350, 300, 30);
+        jLabel2.setBounds(110, 310, 320, 30);
 
         jTableMembros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null},
                 {null, null},
                 {null, null},
                 {null, null},
@@ -131,6 +136,7 @@ public class AdminGrupo extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableMembros.getTableHeader().setReorderingAllowed(false);
         jTableMembros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableMembrosMouseClicked(evt);
@@ -139,15 +145,14 @@ public class AdminGrupo extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTableMembros);
         if (jTableMembros.getColumnModel().getColumnCount() > 0) {
             jTableMembros.getColumnModel().getColumn(0).setResizable(false);
-            jTableMembros.getColumnModel().getColumn(1).setResizable(false);
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(400, 90, 180, 380);
+        jScrollPane1.setBounds(450, 120, 210, 280);
 
         jLabel3.setText("TAG");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(60, 120, 300, 30);
+        jLabel3.setBounds(110, 90, 320, 30);
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -158,13 +163,13 @@ public class AdminGrupo extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTextTag);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(60, 150, 300, 30);
+        jScrollPane4.setBounds(110, 120, 320, 30);
 
         txtNomeGrupo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         txtNomeGrupo.setText("<html>PLACEHOLDER");
         txtNomeGrupo.setToolTipText("");
         getContentPane().add(txtNomeGrupo);
-        txtNomeGrupo.setBounds(50, 0, 550, 100);
+        txtNomeGrupo.setBounds(110, 30, 320, 40);
 
         jButton6.setText("Voltar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -173,29 +178,30 @@ public class AdminGrupo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(60, 490, 70, 40);
+        jButton6.setBounds(110, 450, 140, 40);
 
         jLabel6.setText("Criado por:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(400, 60, 70, 30);
+        jLabel6.setBounds(110, 400, 60, 30);
 
         jLabelCriador.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelCriador.setText("nomeAqui");
         getContentPane().add(jLabelCriador);
-        jLabelCriador.setBounds(470, 60, 140, 30);
+        jLabelCriador.setBounds(170, 400, 140, 30);
 
         jLabel7.setText("Grupod ID:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(60, 70, 70, 30);
+        jLabel7.setBounds(110, 60, 60, 30);
 
         jLabelId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelId.setText("IDAqui");
         getContentPane().add(jLabelId);
-        jLabelId.setBounds(130, 70, 140, 30);
+        jLabelId.setBounds(170, 60, 140, 30);
 
-        jLabel5.setText("<html><i> Selecione um membro da tabela para mais opções.");
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("<html><i> Selecione um membro para mais opções.");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(420, 450, 140, 70);
+        jLabel5.setBounds(450, 400, 211, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -258,6 +264,10 @@ public class AdminGrupo extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AdminGrupo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

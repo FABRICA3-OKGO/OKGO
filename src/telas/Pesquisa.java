@@ -154,7 +154,7 @@ public class Pesquisa extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 510, 24, 24);
+        jLabel1.setBounds(20, 510, 24, 24);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios-alt (1).png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,7 +163,7 @@ public class Pesquisa extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(30, 410, 24, 24);
+        jLabel3.setBounds(20, 410, 24, 24);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/casa.png"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -172,16 +172,20 @@ public class Pesquisa extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(30, 460, 24, 24);
+        jLabel5.setBounds(20, 460, 24, 24);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         jPanel1.setDoubleBuffered(false);
         jPanel1.setEnabled(false);
         jPanel1.setFocusable(false);
         jPanel1.setRequestFocusEnabled(false);
         jPanel1.setVerifyInputWhenFocusTarget(false);
+        jPanel1.setLayout(null);
 
         jScrollPane2.setViewportView(jTextPesquisa);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(20, 40, 570, 30);
 
         jLabelLupa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/procurar.png"))); // NOI18N
         jLabelLupa.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -189,10 +193,14 @@ public class Pesquisa extends javax.swing.JFrame {
                 jLabelLupaMouseClicked(evt);
             }
         });
+        jPanel1.add(jLabelLupa);
+        jLabelLupa.setBounds(600, 40, 30, 30);
 
         txtNomeGrupo1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        txtNomeGrupo1.setText("GRUPOS CORRESPONDENTES");
+        txtNomeGrupo1.setText("<html> <i> Resultados da Pesquisa");
         txtNomeGrupo1.setToolTipText("");
+        jPanel1.add(txtNomeGrupo1);
+        txtNomeGrupo1.setBounds(190, 100, 270, 32);
 
         jTable2.setAutoCreateRowSorter(true);
         jTable2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -234,40 +242,13 @@ public class Pesquisa extends javax.swing.JFrame {
             jTable2.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelLupa, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNomeGrupo1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelLupa, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addGap(12, 12, 12)
-                .addComponent(txtNomeGrupo1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
+        jPanel1.add(jScrollPane3);
+        jScrollPane3.setBounds(20, 140, 610, 415);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(70, 0, 660, 600);
+        jPanel1.setBounds(60, -10, 650, 640);
 
+        jButton1.setBackground(new java.awt.Color(102, 102, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adicionar.png"))); // NOI18N
         jButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jButton1.setMaximumSize(new java.awt.Dimension(24, 24));
@@ -279,7 +260,7 @@ public class Pesquisa extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(740, 500, 40, 40);
+        jButton1.setBounds(720, 490, 50, 50);
 
         pack();
         setLocationRelativeTo(null);

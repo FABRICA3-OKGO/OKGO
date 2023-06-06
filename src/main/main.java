@@ -1,5 +1,5 @@
 package main;
-import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.UIManager;
 import telas.Login;
 
@@ -14,7 +14,7 @@ public class main {
      */
     public static void main(String[] args) {
          try {
-            UIManager.setLookAndFeel(new FlatDarkLaf());
+            UIManager.setLookAndFeel(new FlatLightLaf());
         } catch (Exception e) {
             System.out.println(e);
         }

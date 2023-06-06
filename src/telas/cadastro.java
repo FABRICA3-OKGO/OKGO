@@ -64,25 +64,25 @@ public class Cadastro extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtEmail);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(390, 130, 350, 20);
+        jScrollPane1.setBounds(390, 110, 350, 30);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("CADASTRO");
         jLabel1.setToolTipText("");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(460, 30, 200, 50);
+        jLabel1.setBounds(460, 20, 200, 50);
 
         jLabel2.setText("Digite seu TELEFONE: (opcional)");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(390, 290, 350, 16);
+        jLabel2.setBounds(390, 270, 350, 16);
 
         jLabel5.setText("Digite seu e-mail:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(390, 110, 350, 16);
+        jLabel5.setBounds(390, 90, 350, 16);
 
         jLabel6.setText("Digite sua senha:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(390, 350, 350, 16);
+        jLabel6.setBounds(390, 330, 350, 16);
 
         txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,13 +90,13 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtSenha);
-        txtSenha.setBounds(390, 370, 350, 20);
+        txtSenha.setBounds(390, 350, 350, 30);
 
         jLabel7.setText("Confirme sua senha:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(390, 410, 350, 16);
+        jLabel7.setBounds(390, 390, 350, 16);
         getContentPane().add(txtSenhaConfirmar);
-        txtSenhaConfirmar.setBounds(390, 430, 350, 20);
+        txtSenhaConfirmar.setBounds(390, 410, 350, 30);
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -105,7 +105,7 @@ public class Cadastro extends javax.swing.JFrame {
         jScrollPane2.setViewportView(txtTelefone);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(390, 310, 350, 20);
+        jScrollPane2.setBounds(390, 290, 350, 30);
 
         jButton2.setBackground(new java.awt.Color(255, 255, 102));
         jButton2.setForeground(new java.awt.Color(51, 51, 51));
@@ -118,10 +118,10 @@ public class Cadastro extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(600, 470, 140, 40);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/header1.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/headercadastro.png"))); // NOI18N
         jLabel8.setToolTipText("");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(0, -10, 340, 600);
+        jLabel8.setBounds(0, 0, 340, 600);
 
         jButton3.setText("Voltar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -134,25 +134,25 @@ public class Cadastro extends javax.swing.JFrame {
 
         jLabel3.setText("Digite seu USER:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(390, 170, 350, 16);
+        jLabel3.setBounds(390, 150, 350, 16);
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane3.setViewportView(txtUser);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(390, 190, 350, 20);
+        jScrollPane3.setBounds(390, 170, 350, 30);
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane4.setViewportView(txtNome);
 
         getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(390, 250, 350, 20);
+        jScrollPane4.setBounds(390, 230, 350, 30);
 
         jLabel4.setText("Digite seu NOME:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(390, 230, 350, 16);
+        jLabel4.setBounds(390, 210, 350, 16);
 
         pack();
         setLocationRelativeTo(null);
