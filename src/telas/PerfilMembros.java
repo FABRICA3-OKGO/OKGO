@@ -149,7 +149,7 @@ public class PerfilMembros extends javax.swing.JFrame {
         Object selectedValue = (JOptionPane.showInputDialog(null, "Com qual nota você deseja avaliar este usuário?", "Avaliação",
                 JOptionPane.INFORMATION_MESSAGE, null, itens, itens[0]));
         String nota =selectedValue.toString();
-            ChamarAvaliar(nota,jLabelId.getText()); 
+            ChamarAvaliar(nota,jLabelId.getText());
     }//GEN-LAST:event_jButtonAvaliarActionPerformed
 
     /**
@@ -212,5 +212,6 @@ public class PerfilMembros extends javax.swing.JFrame {
         MeusGrupos meusGrupos = new MeusGrupos();
         meusGrupos.setVisible(true);
         dispose();
+        
     }     
 }

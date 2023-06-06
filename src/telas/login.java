@@ -52,7 +52,6 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
@@ -103,7 +102,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel6);
         jLabel6.setBounds(0, 0, 340, 600);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/AAAAAAAAAAAA.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         getContentPane().add(jLabel7);
         jLabel7.setBounds(460, 90, 230, 60);
 

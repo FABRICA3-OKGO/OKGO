@@ -237,6 +237,7 @@ public class AdminGrupo extends javax.swing.JFrame {
             String id = user.PegarUsuario(username).get(3).toString();
         PerfilMembrosAdm userInfo = new PerfilMembrosAdm(username,nome,email,telefone,id,jLabelId.getText());
             userInfo.setVisible(true); 
+            dispose();
     }//GEN-LAST:event_jTableMembrosMouseClicked
 
     /**

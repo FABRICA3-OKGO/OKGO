@@ -241,6 +241,7 @@ public class MembroGrupo extends javax.swing.JFrame {
             String id = user.PegarUsuario(username).get(3).toString();
         PerfilMembros userInfo = new PerfilMembros(username,nome,email,telefone,id);
             userInfo.setVisible(true);     
+            dispose();
         
     }//GEN-LAST:event_jTableMembrosMouseClicked
 
