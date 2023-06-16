@@ -15,7 +15,6 @@ public class PerfilMembros extends javax.swing.JFrame {
     public PerfilMembros(String username, String nome,String email,String telefone, String id) {
         initComponents();
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
         txtUsername.setText(username);
         jTextNome.setText(nome);
@@ -50,11 +49,10 @@ public class PerfilMembros extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabelId = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
-        setPreferredSize(new java.awt.Dimension(600, 600));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -126,7 +124,7 @@ public class PerfilMembros extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonAvaliar);
-        jButtonAvaliar.setBounds(230, 400, 140, 40);
+        jButtonAvaliar.setBounds(370, 400, 140, 40);
 
         jLabel8.setText("User ID:");
         getContentPane().add(jLabel8);
@@ -141,6 +139,15 @@ public class PerfilMembros extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(80, 90, 178, 20);
 
+        jButton3.setText("Voltar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(80, 400, 140, 40);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -151,6 +158,13 @@ public class PerfilMembros extends javax.swing.JFrame {
         String nota =selectedValue.toString();
             ChamarAvaliar(nota,jLabelId.getText());
     }//GEN-LAST:event_jButtonAvaliarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        telas.MeusGrupos telaMeus = new MeusGrupos();
+        telaMeus.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,6 +204,7 @@ public class PerfilMembros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAvaliar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

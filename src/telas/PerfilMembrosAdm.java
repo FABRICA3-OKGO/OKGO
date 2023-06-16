@@ -16,7 +16,6 @@ public class PerfilMembrosAdm extends javax.swing.JFrame {
     public PerfilMembrosAdm(String username, String nome,String email,String telefone, String id, String grupoId) {
         initComponents();
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
         txtUsername.setText(username);
         jTextNome.setText(nome);
@@ -54,12 +53,12 @@ public class PerfilMembrosAdm extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabelId = new javax.swing.JLabel();
         jButtonExpulsar = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         jLabelIdGrupo.setText("a");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setMaximumSize(new java.awt.Dimension(600, 600));
         setMinimumSize(new java.awt.Dimension(600, 600));
         setResizable(false);
         getContentPane().setLayout(null);
@@ -136,7 +135,7 @@ public class PerfilMembrosAdm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonAvaliar);
-        jButtonAvaliar.setBounds(370, 390, 140, 40);
+        jButtonAvaliar.setBounds(390, 400, 120, 40);
 
         jLabel8.setText("User ID:");
         getContentPane().add(jLabel8);
@@ -156,7 +155,16 @@ public class PerfilMembrosAdm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonExpulsar);
-        jButtonExpulsar.setBounds(80, 390, 140, 40);
+        jButtonExpulsar.setBounds(260, 400, 120, 40);
+
+        jButton3.setText("Voltar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(80, 400, 140, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -179,6 +187,13 @@ public class PerfilMembrosAdm extends javax.swing.JFrame {
         ChamarExpulsar(jLabelId.getText());}
             
     }//GEN-LAST:event_jButtonExpulsarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        telas.MeusGrupos telaMeus = new MeusGrupos();
+        telaMeus.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +237,7 @@ public class PerfilMembrosAdm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonAvaliar;
     private javax.swing.JButton jButtonExpulsar;
     private javax.swing.JLabel jLabel1;

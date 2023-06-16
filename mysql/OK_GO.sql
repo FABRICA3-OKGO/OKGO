@@ -63,7 +63,7 @@ insert into membros (id_grupo, id_membro) values
  (1, 1);
 
 ##SELECTS DE TESTE
-##USUARIOS
+##USUARIOS select * from usuarios;
 select 
 	usu.id as id_usuario,
     username,
