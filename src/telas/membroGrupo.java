@@ -75,7 +75,6 @@ public class MembroGrupo extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
@@ -194,9 +193,9 @@ public class MembroGrupo extends javax.swing.JFrame {
         getContentPane().add(jLabelCriador);
         jLabelCriador.setBounds(170, 400, 140, 30);
 
-        jLabel7.setText("Grupod ID:");
+        jLabel7.setText("Grupo ID:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(110, 60, 57, 30);
+        jLabel7.setBounds(110, 60, 50, 30);
 
         jLabelId.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabelId.setText("IDAqui");

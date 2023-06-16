@@ -72,7 +72,6 @@ public class AdminGrupo extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
@@ -189,7 +188,7 @@ public class AdminGrupo extends javax.swing.JFrame {
         getContentPane().add(jLabelCriador);
         jLabelCriador.setBounds(170, 400, 140, 30);
 
-        jLabel7.setText("Grupod ID:");
+        jLabel7.setText("Grupo ID:");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(110, 60, 60, 30);
 
