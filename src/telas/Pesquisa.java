@@ -22,6 +22,7 @@ public class Pesquisa extends javax.swing.JFrame {
      */
     public Pesquisa(String tag) {
         initComponents();
+        setResizable(false);
         DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
         jTable2.setRowSorter(new TableRowSorter(modelo));
         
@@ -31,6 +32,7 @@ public class Pesquisa extends javax.swing.JFrame {
         jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
         jTable2.getColumnModel().getColumn(2).setPreferredWidth(300);
         jTable2.getColumnModel().getColumn(3).setPreferredWidth(138);
+        jTable2.getTableHeader().setEnabled(false);
         
     }
     

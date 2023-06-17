@@ -15,6 +15,7 @@ public class PerfilMembros extends javax.swing.JFrame {
     public PerfilMembros(String username, String nome,String email,String telefone, String id) {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
         
         txtUsername.setText(username);
         jTextNome.setText(nome);

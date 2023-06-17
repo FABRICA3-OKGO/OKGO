@@ -13,6 +13,7 @@ public class GrupoDetalhes extends javax.swing.JFrame {
      */
     public GrupoDetalhes() {
         initComponents();
+        setResizable(false);
     }
 
     /**

@@ -18,7 +18,9 @@ public class MembroGrupo extends javax.swing.JFrame {
      */
     public MembroGrupo(int idGrupo) {
         initComponents();
+        setResizable(false);
         DefaultTableModel modelo = (DefaultTableModel) jTableMembros.getModel();
+        jTableMembros.getTableHeader().setEnabled(false);
         
         readJTableMembros(idGrupo);
     }

@@ -16,6 +16,7 @@ public class PerfilMembrosAdm extends javax.swing.JFrame {
     public PerfilMembrosAdm(String username, String nome,String email,String telefone, String id, String grupoId) {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
         
         txtUsername.setText(username);
         jTextNome.setText(nome);

@@ -22,6 +22,7 @@ public class Inicio extends javax.swing.JFrame {
      */
     public Inicio() {
         initComponents();
+        setResizable(false);
         DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
         jTable2.setRowSorter(new TableRowSorter(modelo));
         
@@ -31,6 +32,7 @@ public class Inicio extends javax.swing.JFrame {
         jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
         jTable2.getColumnModel().getColumn(2).setPreferredWidth(300);
         jTable2.getColumnModel().getColumn(3).setPreferredWidth(138);
+        jTable2.getTableHeader().setEnabled(false);
         
     }
     
@@ -146,7 +148,6 @@ public class Inicio extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(null);
 
@@ -223,11 +224,12 @@ public class Inicio extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable2.setToolTipText("");
         jTable2.setAutoscrolls(false);
-        jTable2.setColumnSelectionAllowed(true);
         jTable2.setFillsViewportHeight(true);
         jTable2.setFocusCycleRoot(true);
         jTable2.setRowHeight(23);
+        jTable2.setRowSelectionAllowed(true);
         jTable2.setShowGrid(false);
         jTable2.setShowVerticalLines(true);
         jTable2.getTableHeader().setReorderingAllowed(false);
@@ -290,7 +292,10 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
         //clicar na tabela e ela levar a outra pagina
+        
         int index = jTable2.getSelectedRow();
+        //DefaultTableModel modelo2 = (DefaultTableModel) jTable2.getModel();
+        //jTable2.setRowSorter(new TableRowSorter(modelo));
         TableModel model = jTable2.getModel();
         //pega o id do grupo selecionado para pegar as informações adicionais 
         int id = Integer.valueOf(model.getValueAt(index, 0).toString());

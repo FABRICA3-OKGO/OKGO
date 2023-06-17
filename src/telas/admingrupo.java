@@ -18,7 +18,9 @@ public class AdminGrupo extends javax.swing.JFrame {
      */
     public AdminGrupo(int idGrupo) {
         initComponents();
+        setResizable(false);
         DefaultTableModel modelo = (DefaultTableModel) jTableMembros.getModel();
+        jTableMembros.getTableHeader().setEnabled(false);
         
         readJTableMembros(idGrupo);
     }

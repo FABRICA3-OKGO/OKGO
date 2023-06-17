@@ -18,6 +18,7 @@ public class CriarGrupo extends javax.swing.JFrame {
      */
     public CriarGrupo() {
         initComponents();
+        setResizable(false);
     }
 
     /**
